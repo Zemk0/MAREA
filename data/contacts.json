@@ -1,14 +1,14 @@
 [
   {
-    "name": "Isabella Reyes",
-    "role": "Majiteľka",
-    "contact": "Discord: isabella.marea",
-    "image": "assets/images/contact-owner.svg"
+    "name": "Daniel Herrelson",
+    "role": "Majiteľ",
+    "contact": "Discord: zemo6955",
+    "image": "assets/images/profile/contact-owner.svg"
   },
   {
     "name": "Marco Fabbri",
     "role": "Manažment",
     "contact": "Discord: marco.marea",
-    "image": "assets/images/contact-manager.svg"
+    "image": "assets/images/profile/contact-manager.svg"
   }
 ]

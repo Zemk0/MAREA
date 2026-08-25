@@ -1,34 +1,34 @@
 [
   {
-    "image": "assets/images/gallery-01.svg",
+    "image": "assets/images/galery/gallery-01.svg",
     "caption": "Pohľad na MARÉA pri západe slnka"
   },
   {
-    "image": "assets/images/gallery-02.svg",
+    "image": "assets/images/galery/gallery-02.svg",
     "caption": "Hlavný bar na palube"
   },
   {
-    "image": "assets/images/gallery-03.svg",
+    "image": "assets/images/galery/gallery-03.svg",
     "caption": "Večerná atmosféra s DJ setom"
   },
   {
-    "image": "assets/images/gallery-04.svg",
+    "image": "assets/images/galery/gallery-04.svg",
     "caption": "Čerstvé morské plody priamo z mora"
   },
   {
-    "image": "assets/images/gallery-05.svg",
+    "image": "assets/images/galery/gallery-05.svg",
     "caption": "Oddychová zóna na prove"
   },
   {
-    "image": "assets/images/gallery-06.svg",
+    "image": "assets/images/galery/gallery-06.svg",
     "caption": "Signature koktaily MARÉA"
   },
   {
-    "image": "assets/images/gallery-07.svg",
+    "image": "assets/images/galery/gallery-07.svg",
     "caption": "Nočný výhľad na horizont Los Santos"
   },
   {
-    "image": "assets/images/gallery-08.svg",
+    "image": "assets/images/galery/gallery-08.svg",
     "caption": "VIP zóna pri kormidle"
   }
 ]

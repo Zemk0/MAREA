@@ -3,18 +3,18 @@
     "name": "Sunset DJ Session",
     "date": "2026-09-05",
     "description": "Otvorenie sezóny s DJ setom pri západe slnka. Welcome drink pre prvých 50 hostí.",
-    "image": "assets/images/event-sunset.svg"
+    "image": "assets/images/events/event-sunset.svg"
   },
   {
     "name": "MARÉA White Night",
     "date": "2026-09-19",
     "description": "Tematická biela noc s live hudbou, šampanským barom a špeciálnym menu.",
-    "image": "assets/images/event-whitenight.svg"
+    "image": "assets/images/events/event-whitenight.svg"
   },
   {
     "name": "Deep Ocean Beats",
     "date": "2026-10-03",
     "description": "Nočný event s deep house DJ lineupom a svetelnou show na palube.",
-    "image": "assets/images/event-deepocean.svg"
+    "image": "assets/images/events/event-deepocean.svg"
   }
 ]
