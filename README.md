@@ -172,7 +172,7 @@ Otvor `data/jobs.json`:
 {
   "title": "Bartender / Barmanka",
   "description": "Príprava signature koktailov, starostlivosť o hostí pri bare.",
-  "requirements": "RP skúsenosti výhodou, priateľský prístup, spoľahlivosť.",
+  "salary": "180$ – 250$ / zmena",
   "icon": "sparkles"
 }
 ```

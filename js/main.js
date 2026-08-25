@@ -269,9 +269,9 @@
         <div class="service-icon">${getIcon(job.icon)}</div>
         <h3 class="service-name">${escapeHTML(job.title)}</h3>
         <p class="service-desc">${escapeHTML(job.description)}</p>
-        <div class="service-price job-requirements">
-          <span class="job-requirements-label">Požiadavky</span>
-          ${escapeHTML(job.requirements)}
+        <div class="service-price job-salary">
+          <span class="job-salary-label">Plat</span>
+          ${escapeHTML(job.salary)}
         </div>
       </article>`
       )

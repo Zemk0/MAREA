@@ -1,20 +1,32 @@
 [
   {
-    "title": "Barman / Barmanka",
+    "title": "Bartender / Barmanka",
     "description": "Príprava signature koktailov, starostlivosť o hostí pri bare a udržiavanie prémiovej atmosféry MARÉA.",
-    "requirements": "RP skúsenosti výhodou, priateľský prístup, znalosť menu, spoľahlivosť.",
+    "salary": "180$ – 250$ / zmena",
     "icon": "sparkles"
   },
   {
-    "title": "DJ",
+    "title": "DJ / Hudobný rezident",
     "description": "Hudobný program počas večerných a nočných eventov, spolupráca s event tímom na atmosfére paluby.",
-    "requirements": "Vlastný hudobný štýl, skúsenosti s miešaním, flexibilita v rámci eventov.",
+    "salary": "300$ / event",
     "icon": "star"
   },
   {
-    "title": "Security",
+    "title": "Hosteska / Host",
+    "description": "Vítanie hostí, správa rezervácií a starostlivosť o VIP klientelu na palube.",
+    "salary": "150$ – 200$ / zmena",
+    "icon": "group"
+  },
+  {
+    "title": "Bezpečnostná služba",
     "description": "Zabezpečenie hladkého priebehu eventov a bezpečnosti hostí aj posádky.",
-    "requirements": "Skúsenosti s bezpečnostnou RP frakciou výhodou, pokojné a rozhodné vystupovanie.",
+    "salary": "200$ – 280$ / zmena",
     "icon": "anchor"
+  },
+  {
+    "title": "Event koordinátor",
+    "description": "Plánovanie a organizácia tematických eventov, spolupráca s DJ-om a manažmentom.",
+    "salary": "250$ / event + provízia",
+    "icon": "briefcase"
   }
 ]
