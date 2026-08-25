@@ -12,21 +12,9 @@
     "icon": "star"
   },
   {
-    "title": "Hosteska / Host",
-    "description": "Vítanie hostí, správa rezervácií a starostlivosť o VIP klientelu na palube.",
-    "salary": "150$ – 200$ / zmena",
-    "icon": "group"
-  },
-  {
     "title": "Bezpečnostná služba",
     "description": "Zabezpečenie hladkého priebehu eventov a bezpečnosti hostí aj posádky.",
     "salary": "200$ – 280$ / zmena",
     "icon": "anchor"
-  },
-  {
-    "title": "Event koordinátor",
-    "description": "Plánovanie a organizácia tematických eventov, spolupráca s DJ-om a manažmentom.",
-    "salary": "250$ / event + provízia",
-    "icon": "briefcase"
   }
 ]
