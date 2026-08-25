@@ -123,7 +123,7 @@ Otvor `data/services.json`. Každá služba má tvar:
 ```
 
 - `price` je text (môžeš napísať napr. `"na vyžiadanie"` alebo `"od 150$"`).
-- `icon` môže byť jedna z hodnôt: `anchor`, `star`, `sparkles`, `yacht`, `group`, `briefcase` (ak zadáš iný/neznámy názov, zobrazí sa predvolená ikonka vlny).
+- `icon` môže byť jedna z hodnôt: `anchor`, `star`, `sparkles`, `yacht`, `group`, `briefcase`, `plus`, `crown`, `cocktail`, `music`, `diamond`, `calendar`, `shield`, `gift`, `wave` (ak zadáš iný/neznámy názov, zobrazí sa predvolená ikonka vlny).
 - Novú službu pridáš pridaním ďalšieho objektu do poľa, existujúcu odstrániš vymazaním jej bloku.
 
 ---
@@ -177,7 +177,7 @@ Otvor `data/jobs.json`:
 }
 ```
 
-- `icon` môže byť jedna z hodnôt: `anchor`, `star`, `sparkles`, `yacht`, `group`, `briefcase` (rovnaká sada ako pri službách).
+- `icon` môže byť jedna z hodnôt: `anchor`, `star`, `sparkles`, `yacht`, `group`, `briefcase`, `plus`, `crown`, `cocktail`, `music`, `diamond`, `calendar`, `shield`, `gift`, `wave` (rovnaká sada ako pri službách).
 - Ak necháš pole prázdne `[]`, stránka `praca.html` zobrazí hlášku „Momentálne nemáme otvorené žiadne pozície.“
 - Uchádzači sa hlásia cez tlačidlo „Napísať cez Discord“ nad zoznamom pozícií — odkaz sa berie z `discord.url` v `data/business.json` (pozri bod 3).
 
