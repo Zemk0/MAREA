@@ -1,0 +1,11 @@
+[
+  { "label": "Domov", "href": "index.html#home" },
+  { "label": "O nás", "href": "index.html#about" },
+  { "label": "Menu", "href": "menu.html" },
+  { "label": "Služby", "href": "index.html#services" },
+  { "label": "Lokalita", "href": "index.html#location" },
+  { "label": "Eventy", "href": "index.html#events" },
+  { "label": "Galéria", "href": "galeria.html" },
+  { "label": "Práca", "href": "praca.html" },
+  { "label": "Kontakt", "href": "kontakt.html" }
+]

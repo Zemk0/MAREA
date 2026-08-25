@@ -1,0 +1,104 @@
+[
+  {
+    "name": "Ustricový tanier Royale",
+    "description": "Šesť čerstvých ustríc podávaných s mignonette omáčkou a citrónom.",
+    "price": 45,
+    "category": "seafood"
+  },
+  {
+    "name": "Grilované jazvece raky",
+    "description": "Langusty grilované na masle s cesnakom a bylinkami, servírované s limetkou.",
+    "price": 68,
+    "category": "seafood"
+  },
+  {
+    "name": "Tuniákový tatarák",
+    "description": "Čerstvý tuniak, avokádo, sézam a wasabi majonéza.",
+    "price": 38,
+    "category": "seafood"
+  },
+  {
+    "name": "Morský gril MARÉA",
+    "description": "Výber denných úlovkov grilovaných na otvorenom ohni s citrusovou marinádou.",
+    "price": 72,
+    "category": "seafood"
+  },
+  {
+    "name": "Stredomorský šalát s kozím syrom",
+    "description": "Čerstvá zelenina, olivy, kozí syr a balzamikový dressing.",
+    "price": 24,
+    "category": "food"
+  },
+  {
+    "name": "Rezancová misa s krevetami",
+    "description": "Ázijské rezance, tigrie krevety, chilli a limetka.",
+    "price": 34,
+    "category": "food"
+  },
+  {
+    "name": "Wagyu slider trio",
+    "description": "Tri mini burgery z wagyu hovädzieho s karamelizovanou cibuľou.",
+    "price": 42,
+    "category": "food"
+  },
+  {
+    "name": "Truffle hranolky",
+    "description": "Chrumkavé hranolky s lanýžovým olejom a parmezánom.",
+    "price": 18,
+    "category": "food"
+  },
+  {
+    "name": "MARÉA Sunset",
+    "description": "Rum, mango, marakuja a šumivé víno.",
+    "price": 22,
+    "category": "alcohol"
+  },
+  {
+    "name": "Ocean Breeze Martini",
+    "description": "Vodka, modré curacao, limetka a sóda.",
+    "price": 24,
+    "category": "alcohol"
+  },
+  {
+    "name": "Golden Yacht Mojito",
+    "description": "Biely rum, mäta, limetka a zlatý trstinový cukor.",
+    "price": 20,
+    "category": "alcohol"
+  },
+  {
+    "name": "Champagne Reserve",
+    "description": "Fľaša prémiového šumivého vína na objednávku.",
+    "price": 120,
+    "category": "alcohol"
+  },
+  {
+    "name": "Whisky Old Fashioned",
+    "description": "Bourbon, angostura bitter a pomarančová kôra.",
+    "price": 26,
+    "category": "alcohol"
+  },
+  {
+    "name": "Tropical Fresh",
+    "description": "Mix čerstvého ananásu, mango a marakuje.",
+    "price": 14,
+    "category": "nonalcohol"
+  },
+  {
+    "name": "MARÉA Lemonade",
+    "description": "Domáca limonáda s mätou a citrusmi.",
+    "price": 12,
+    "category": "nonalcohol"
+  },
+  {
+    "name": "Kokosová voda so sódou",
+    "description": "Osviežujúca kokosová voda s ľadom a mätou.",
+    "price": 13,
+    "category": "nonalcohol"
+  },
+  {
+    "name": "Espresso Tonic",
+    "description": "Espresso, tonic a ľad — letná verzia kávy.",
+    "price": 11,
+    "category": "nonalcohol"
+  }
+]

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1400" width="1200" height="1400" role="img" aria-label="MARÉA">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a2540"/>
+      <stop offset="55%" stop-color="#12405f"/>
+      <stop offset="100%" stop-color="#1c6f8c"/>
+    </linearGradient>
+    <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f5d18b"/>
+      <stop offset="100%" stop-color="#f5d18b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e3a52"/>
+      <stop offset="100%" stop-color="#082234"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1400" fill="url(#sky)"/>
+  <circle cx="864" cy="504" r="196.00000000000003" fill="url(#sunGrad)"/>
+  <rect y="868" width="1200" height="532" fill="url(#seaGrad)"/>
+  
+    <g transform="translate(360, 868)" opacity="0.92">
+      <path d="M0,60 L420,60 L380,110 L40,110 Z" fill="#0d2036"/>
+      <rect x="60" y="10" width="140" height="52" rx="4" fill="#123249"/>
+      <line x1="130" y1="-90" x2="130" y2="10" stroke="#d9c396" stroke-width="4"/>
+      <path d="M130,-90 L200,5 L130,5 Z" fill="#e8dfc8" opacity="0.9"/>
+    </g>
+  <g opacity="0.5"><path d="M0,924 Q80,900 160,924 Q240,948 320,924 Q400,900 480,924 Q560,948 640,924 Q720,900 800,924 Q880,948 960,924 Q1040,900 1120,924 Q1200,948 1280,924 Q1360,900 1440,924 Q1520,948 1600,924 Q1680,900 1760,924 L1600,1124 L0,1124 Z" fill="#ffffff" opacity="0.12"/></g>
+  <g opacity="0.4"><path d="M0,1036 Q80,1006 160,1036 Q240,1066 320,1036 Q400,1006 480,1036 Q560,1066 640,1036 Q720,1006 800,1036 Q880,1066 960,1036 Q1040,1006 1120,1036 Q1200,1066 1280,1036 Q1360,1006 1440,1036 Q1520,1066 1600,1036 Q1680,1006 1760,1036 L1600,1236 L0,1236 Z" fill="#ffffff" opacity="0.1"/></g>
+  <g opacity="0.3"><path d="M0,1176 Q80,1158 160,1176 Q240,1194 320,1176 Q400,1158 480,1176 Q560,1194 640,1176 Q720,1158 800,1176 Q880,1194 960,1176 Q1040,1158 1120,1176 Q1200,1194 1280,1176 Q1360,1158 1440,1176 Q1520,1194 1600,1176 Q1680,1158 1760,1176 L1600,1376 L0,1376 Z" fill="#ffffff" opacity="0.08"/></g>
+</svg>

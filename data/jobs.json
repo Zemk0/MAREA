@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Barman / Barmanka",
+    "description": "Príprava signature koktailov, starostlivosť o hostí pri bare a udržiavanie prémiovej atmosféry MARÉA.",
+    "requirements": "RP skúsenosti výhodou, priateľský prístup, znalosť menu, spoľahlivosť.",
+    "icon": "sparkles"
+  },
+  {
+    "title": "DJ",
+    "description": "Hudobný program počas večerných a nočných eventov, spolupráca s event tímom na atmosfére paluby.",
+    "requirements": "Vlastný hudobný štýl, skúsenosti s miešaním, flexibilita v rámci eventov.",
+    "icon": "star"
+  },
+  {
+    "title": "Security",
+    "description": "Zabezpečenie hladkého priebehu eventov a bezpečnosti hostí aj posádky.",
+    "requirements": "Skúsenosti s bezpečnostnou RP frakciou výhodou, pokojné a rozhodné vystupovanie.",
+    "icon": "anchor"
+  }
+]

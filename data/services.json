@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Vstup na MARÉA",
+    "description": "Základný vstup na palubu s prístupom do hlavného baru a oddychových zón.",
+    "price": "od 50$",
+    "icon": "anchor"
+  },
+  {
+    "name": "VIP vstup",
+    "description": "Prioritný vstup, vyhradená zóna, uvítací drink a osobný servis.",
+    "price": "od 150$",
+    "icon": "star"
+  },
+  {
+    "name": "Súkromný event",
+    "description": "Vyhradená časť jachty pre váš event vrátane obsluhy a hudobného programu.",
+    "price": "na vyžiadanie",
+    "icon": "sparkles"
+  },
+  {
+    "name": "Prenájom celej jachty",
+    "description": "Exkluzívny prenájom celej MARÉA pre súkromnú akciu, oslavu alebo stretnutie.",
+    "price": "na vyžiadanie",
+    "icon": "yacht"
+  },
+  {
+    "name": "Skupinové rezervácie",
+    "description": "Rezervácia priestoru pre väčšie skupiny s prispôsobeným menu.",
+    "price": "od 300$",
+    "icon": "group"
+  },
+  {
+    "name": "Firemné eventy",
+    "description": "Priestor a servis prispôsobený firemným stretnutiam a prezentáciám.",
+    "price": "na vyžiadanie",
+    "icon": "briefcase"
+  }
+]

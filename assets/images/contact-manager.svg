@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="MARÉA">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#071a2c"/>
+      <stop offset="55%" stop-color="#0e3a52"/>
+      <stop offset="100%" stop-color="#2a8fae"/>
+    </linearGradient>
+    <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f5d18b"/>
+      <stop offset="100%" stop-color="#f5d18b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e3a52"/>
+      <stop offset="100%" stop-color="#082234"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#sky)"/>
+  
+  <rect y="372" width="600" height="228" fill="url(#seaGrad)"/>
+  
+  <g opacity="0.5"><path d="M0,396 Q80,372 160,396 Q240,420 320,396 Q400,372 480,396 Q560,420 640,396 Q720,372 800,396 Q880,420 960,396 Q1040,372 1120,396 Q1200,420 1280,396 Q1360,372 1440,396 Q1520,420 1600,396 Q1680,372 1760,396 L1600,596 L0,596 Z" fill="#ffffff" opacity="0.12"/></g>
+  <g opacity="0.4"><path d="M0,444 Q80,414 160,444 Q240,474 320,444 Q400,414 480,444 Q560,474 640,444 Q720,414 800,444 Q880,474 960,444 Q1040,414 1120,444 Q1200,474 1280,444 Q1360,414 1440,444 Q1520,474 1600,444 Q1680,414 1760,444 L1600,644 L0,644 Z" fill="#ffffff" opacity="0.1"/></g>
+  <g opacity="0.3"><path d="M0,504 Q80,486 160,504 Q240,522 320,504 Q400,486 480,504 Q560,522 640,504 Q720,486 800,504 Q880,522 960,504 Q1040,486 1120,504 Q1200,522 1280,504 Q1360,486 1440,504 Q1520,522 1600,504 Q1680,486 1760,504 L1600,704 L0,704 Z" fill="#ffffff" opacity="0.08"/></g>
+</svg>

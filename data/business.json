@@ -1,0 +1,34 @@
+{
+  "name": "MARÉA",
+  "type": "Yacht Bar",
+  "slogan": "Where the city meets the sea.",
+  "shortDescription": "MARÉA je luxusný letný yacht bar kotviaci pri pobreží Los Santos, kde sa stretáva pokoj otvoreného mora s energiou nočného života.",
+  "concept": "MARÉA vznikla z myšlienky spojiť exkluzivitu súkromného yachtingu s otvorenou, komunitnou atmosférou obľúbeného pobrežného baru. Cez deň ponúkame pokojné posedenie pri mori s výhľadom na horizont, večer sa paluba mení na živé miesto plné hudby, svetiel a ľudí.",
+  "atmosphere": "",
+  "focus": [
+    "Prémiové drinky a koktaily",
+    "Čerstvé morské plody",
+    "Live hudba a DJ eventy",
+    "Súkromné akcie a prenájmy",
+    "Komunitné a stretnutia",
+    "Letná relaxácia pri mori"
+  ],
+  "location": {
+    "title": "Kde nás nájdete",
+    "description": "MARÉA sa nachádza na luxusnej jachte kotviacej mimo pobrežia Los Santos. Prístup je zabezpečený cez naše prístupové miesto na pevnine. Presné informácie o prístupe a otvorení budú dostupné podľa aktuálnej prevádzky.",
+    "area": "Pobrežie Los Santos",
+    "access": "Prístupový bod na pevnine — Del Perro Pier",
+    "note": "Presné súradnice a otváracie hodiny budú aktualizované podľa aktuálnej RP prevádzky."
+  },
+  "hero": {
+    "title": "MARÉA",
+    "subtitle": "YACHT BAR",
+    "tagline": "Where the city meets the sea.",
+    "ctaPrimary": "Čo je MARÉA?",
+    "ctaSecondary": "Menu a drinky"
+  },
+  "discord": {
+    "url": "https://discord.gg/eqYwjYjBwX",
+    "label": "Pridaj sa na Discord"
+  }
+}

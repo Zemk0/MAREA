@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — MARÉA Yacht Bar</title>
+  <meta name="description"
+    content="Menu MARÉA — čerstvé morské plody, letné jedlá a signature koktaily na palube yacht baru pri Los Santos.">
+  <meta name="theme-color" content="#071a2c">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <!-- ==================== Navbar ==================== -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html#home" class="brand">
+        MARÉA
+        <span class="brand-tag">Yacht Bar</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links"></ul>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Otvoriť menu" aria-expanded="false"
+        aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <noscript>
+    <div style="padding:2rem;text-align:center;background:#0a2540;color:#f4f1ea;">
+      Pre plné zobrazenie obsahu MARÉA je potrebný povolený JavaScript.
+    </div>
+  </noscript>
+
+  <main>
+
+    <!-- ==================== Page hero ==================== -->
+    <section class="page-hero">
+      <div class="page-hero-content">
+        <span class="eyebrow">MARÉA</span>
+        <h1 class="page-hero-title">Menu</h1>
+        <p class="page-hero-desc">Čerstvé morské plody, letné jedlá a signature koktaily MARÉA.</p>
+      </div>
+    </section>
+
+    <!-- ==================== Menu ==================== -->
+    <section id="menu">
+      <div class="container">
+        <div class="menu-filters" id="menu-filters" role="tablist" aria-label="Filter kategórií menu"></div>
+
+        <div class="menu-grid" id="menu-grid">
+          <p class="menu-empty">Načítavam menu…</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== Footer ==================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">MARÉA</div>
+      <div class="footer-type">Yacht Bar</div>
+      <p class="footer-tagline">„Where the city meets the sea.“</p>
+
+      <nav class="footer-nav" id="footer-nav"></nav>
+
+      <div class="footer-bottom">
+        © <span id="footer-year"></span> MARÉA. Fiktívny podnik vytvorený pre FiveM RP komunitu.
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Späť na vrch stránky">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5" />
+      <path d="M5 12l7-7 7 7" />
+    </svg>
+  </button>
+
+  <script src="js/loader.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
