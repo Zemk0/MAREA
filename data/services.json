@@ -9,19 +9,19 @@
     "name": "Vstup Plus",
     "description": "Rozšírený vstup, uvítací drink a daľsie výhody.",
     "price": "od 150$",
-    "icon": "plus"
+    "icon": "crown"
   },
   {
     "name": "VIP vstup",
     "description": "Prioritný vstup, vyhradená zóna, uvítací drink a osobný servis.",
-    "price": "od 150$",
+    "price": "od 200$",
     "icon": "star"
   },
   {
     "name": "Black Card VIP Membership",
     "description": "Exkluzívne výhody pre členov, vrátane súkromných eventov a špeciálnych ponúk.",
     "price": "od 500$",
-    "icon": "briefcase"
+    "icon": "diamond"
   },
   {
     "name": "Súkromný event",
