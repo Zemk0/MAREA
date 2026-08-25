@@ -2,19 +2,19 @@
   {
     "title": "Bartender / Barmanka",
     "description": "Príprava signature koktailov, starostlivosť o hostí pri bare a udržiavanie prémiovej atmosféry MARÉA.",
-    "salary": "180$ – 250$ / zmena",
+    "salary": "80.000$/hodina + tringelt",
     "icon": "cocktail"
   },
   {
     "title": "DJ / Hudobný rezident",
-    "description": "Hudobný program počas večerných a nočných eventov, spolupráca s event tímom na atmosfére paluby.",
-    "salary": "300$ / event",
+    "description": "Hudobný program počas večerných a nočných eventov, spríjemnovanie atmosféri na palube.",
+    "salary": "100.000$/ zmenu",
     "icon": "music"
   },
   {
     "title": "Bezpečnostná služba",
-    "description": "Zabezpečenie hladkého priebehu eventov a bezpečnosti hostí aj posádky.",
-    "salary": "200$ – 280$ / zmena",
+    "description": "Zabezpečenie hladkého priebehu eventov, preprava hostí, predaj vstupeniek a bezpečnosti posádky.",
+    "salary": "90.000$/ hodina (+ tringelt pohladník)",
     "icon": "shield"
   }
 ]
