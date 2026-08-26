@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zamestnanci — MARÉA Yacht Bar</title>
+  <meta name="description" content="Interná zóna pre personál MARÉA — kalkulačka objednávok a prevádzkové informácie.">
+  <meta name="theme-color" content="#071a2c">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="icon" type="image/png" href="assets/icons/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css?v=10">
+  <link rel="stylesheet" href="css/responsive.css?v=2">
+</head>
+<body>
+
+  <!-- ==================== Navbar ==================== -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html#home" class="brand">
+        MARÉA
+        <span class="brand-tag">Yacht Bar</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="nav-links"></ul>
+      </nav>
+
+      <button type="button" class="hamburger" id="hamburger" aria-label="Otvoriť menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <noscript>
+    <div style="padding:2rem;text-align:center;background:#0a2540;color:#f4f1ea;">
+      Pre plné zobrazenie obsahu MARÉA je potrebný povolený JavaScript.
+    </div>
+  </noscript>
+
+  <main>
+
+    <!-- ==================== Page hero ==================== -->
+    <section class="page-hero">
+      <div class="page-hero-content">
+        <span class="eyebrow">MARÉA</span>
+        <h1 class="page-hero-title">Zamestnanci</h1>
+        <p class="page-hero-desc">Interná zóna pre personál — kalkulačka objednávok a prevádzkové informácie.</p>
+      </div>
+    </section>
+
+    <!-- ==================== Prístupová brána ==================== -->
+    <section id="staff-gate">
+      <div class="container">
+        <div class="staff-gate-card reveal">
+          <span class="eyebrow">Interná zóna</span>
+          <h2 class="section-title">Prístup pre personál</h2>
+          <p class="section-subtitle">Zadaj prístupový kód zverejnený v oznámení na firemnom Discorde.</p>
+
+          <form id="staff-gate-form" class="staff-gate-form">
+            <input type="text" id="staff-gate-input" class="staff-gate-input" placeholder="Prístupový kód" autocomplete="off" aria-label="Prístupový kód">
+            <button type="submit" class="btn btn-primary">Vstúpiť</button>
+          </form>
+
+          <p class="staff-gate-error" id="staff-gate-error" hidden>Nesprávny kód. Skús to znova alebo sa opýtaj v Discorde.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Obsah pre personál (skryté do zadania kódu) ==================== -->
+    <div id="staff-content" hidden>
+
+      <!-- ==================== Kalkulačka ==================== -->
+      <section id="calculator" class="section-alt">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="eyebrow">Personál</span>
+            <h2 class="section-title">Kalkulačka objednávky</h2>
+            <p class="section-subtitle">Rýchly výpočet ceny objednávky vrátane Black Card zľavy.</p>
+          </div>
+
+          <label class="calc-discount">
+            <input type="checkbox" id="calc-discount-toggle">
+            <span>Zákazník má Black Card — uplatniť zľavu</span>
+          </label>
+
+          <div class="calc-list" id="calc-list">
+            <p class="state-empty">Načítavam menu…</p>
+          </div>
+
+          <div class="calc-summary">
+            <button type="button" class="btn btn-outline" id="calc-reset">Vynulovať</button>
+            <div class="calc-total">Spolu: <span id="calc-total-value">0$</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== Prevádzkové poznámky ==================== -->
+      <section id="staff-info">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="eyebrow">Dôležité</span>
+            <h2 class="section-title">Prevádzkové poznámky</h2>
+          </div>
+
+          <ul class="staff-notes reveal" id="staff-notes">
+            <li>Načítavam poznámky…</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ==================== Pozície a platy ==================== -->
+      <section id="staff-jobs" class="section-alt">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="eyebrow">Referencia</span>
+            <h2 class="section-title">Pozície a platy</h2>
+          </div>
+
+          <div class="jobs-grid" id="jobs-grid">
+            <p class="state-empty">Načítavam pozície…</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== Kontakt na vedenie ==================== -->
+      <section id="staff-contacts">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="eyebrow">Kontakt</span>
+            <h2 class="section-title">Vedenie MARÉA</h2>
+          </div>
+
+          <div class="contacts-grid" id="contacts-grid">
+            <p class="state-empty">Načítavam kontakty…</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- ==================== Footer ==================== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">MARÉA</div>
+      <div class="footer-type">Yacht Bar</div>
+      <p class="footer-tagline">„Where the city meets the sea.“</p>
+
+      <nav class="footer-nav" id="footer-nav"></nav>
+
+      <div class="footer-bottom">
+        © <span id="footer-year"></span> MAREA YACHT BAR | TRINITY RP CZ.
+        <a href="zamestnanci.html" class="staff-link">Personál</a>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Späť na vrch stránky">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5"/><path d="M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <script src="js/loader.js?v=6"></script>
+  <script src="js/main.js?v=10"></script>
+</body>
+</html>

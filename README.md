@@ -6,16 +6,17 @@ Statický web pre fiktívny FiveM RP podnik **MARÉA** — luxusný letný yacht
 
 Web je čisto statický (HTML5 + CSS3 + Vanilla JavaScript). Všetok obsah, ktorý sa môže meniť (menu, ceny, kontakty, eventy, služby, galéria, texty o podniku, navigácia), sa načítava dynamicky z JSON súborov v priečinku `data/`. Nepotrebuje žiadny backend, databázu ani build proces — funguje priamo po nahratí na GitHub Pages.
 
-Web je rozdelený na **6 HTML stránok**, ktoré zdieľajú rovnakú navigáciu, pätičku, štýly aj skripty:
+Web je rozdelený na **7 HTML stránok**, ktoré zdieľajú rovnakú navigáciu, pätičku, štýly aj skripty:
 
 | Stránka | Obsahuje |
 |---|---|
 | `index.html` | Domov (hero), O nás, Služby, Lokalita, Eventy |
-| `menu.html` | Menu s filtrom kategórií |
+| `menu.html` | Menu s filtrom kategórií a prepínačom Black Card cien |
 | `galeria.html` | Fotogaléria s lightboxom |
 | `praca.html` | Otvorené pozície + odkaz na Discord |
 | `partneri.html` | Partneri MARÉA |
 | `kontakt.html` | Kontakt, vedenie a odkaz na Discord |
+| `zamestnanci.html` | Interná zóna pre personál (kalkulačka, poznámky) — chránená prístupovým kódom, nie je v hlavnej navigácii |
 
 ---
 
@@ -29,6 +30,7 @@ Web je rozdelený na **6 HTML stránok**, ktoré zdieľajú rovnakú navigáciu,
 ├── praca.html                  → Práca (otvorené pozície)
 ├── partneri.html                → Partneri
 ├── kontakt.html               → Kontakt a vedenie
+├── zamestnanci.html            → Interná zóna pre personál (chránená kódom)
 ├── README.md
 │
 ├── assets/
@@ -53,6 +55,7 @@ Web je rozdelený na **6 HTML stránok**, ktoré zdieľajú rovnakú navigáciu,
     ├── events.json              → nadchádzajúce eventy
     ├── gallery.json             → obrázky galérie
     ├── jobs.json                → otvorené pracovné pozície
+    ├── staff.json               → prístupový kód a poznámky pre zamestnancov
     └── partners.json            → partneri MARÉA
 ```
 
@@ -101,11 +104,13 @@ Otvor `data/menu.json`. Je to zoznam položiek v tvare:
   "name": "Ustricový tanier Royale",
   "description": "Šesť čerstvých ustríc podávaných s mignonette omáčkou a citrónom.",
   "price": 45,
+  "memberPrice": 36,
   "category": "seafood"
 }
 ```
 
 - `price` zadávaj ako číslo (bez meny) — na webe sa automaticky zobrazí ako `45$`.
+- `memberPrice` je voliteľné zvýhodnené číslo pre držiteľov Black Card membershipu. Na stránke Menu si to hosť/personál prepne cez prepínač „Klasická cena / Cena s Black Card“. Ak pole vynecháš, položka pri prepnutí jednoducho zostane pri klasickej cene.
 - `category` musí byť jedna z hodnôt: `seafood` (morské plody), `food` (jedlá), `alcohol` (alkoholické nápoje), `nonalcohol` (nealkoholické nápoje). Filter kategórií v menu sa generuje automaticky podľa toho, čo sa nachádza v súbore.
 - Novú položku pridáš jednoducho pridaním ďalšieho objektu `{ ... }` do poľa (nezabudni na čiarku medzi položkami).
 - Položku odstrániš vymazaním jej celého bloku `{ ... }`.
@@ -206,7 +211,34 @@ Otvor `data/partners.json`:
 
 ---
 
-## 10. Ako pridať obrázky do galérie
+## 10. Interná zóna pre zamestnancov (stránka Zamestnanci)
+
+Stránka `zamestnanci.html` **nie je** v hlavnej navigácii ani vo `footer-nav` — nájdeš ju len cez malý nenápadný odkaz „Personál“ celkom dole v pätičke každej stránky. Obsahuje:
+
+- **Kalkulačku objednávky** — zoznam všetkých položiek z `data/menu.json` s tlačidlami na pridanie/ubranie kusu a prepínačom „Zákazník má Black Card“, ktorý prepočíta ceny na `memberPrice`. Súčet sa počíta priamo v prehliadači, nič sa nikam neukladá — po obnovení stránky sa vynuluje.
+- **Prevádzkové poznámky**, **Pozície a platy** (z `data/jobs.json`) a **Kontakt na vedenie** (z `data/contacts.json`) — rovnaké karty, aké poznáš z verejných stránok.
+
+### Prístupový kód
+
+Obsah je schovaný za jednoduchou obrazovkou s kódom. Kód sa nastavuje v `data/staff.json`:
+
+```json
+{
+  "accessCode": "TRINITY-STAFF-2026",
+  "notes": [
+    "Prevádzková poznámka pre personál…"
+  ]
+}
+```
+
+- Zmeň `accessCode` na hocičo a nový kód pošli zamestnancom napr. cez oznam na firemnom Discorde.
+- `notes` je zoznam krátkych poznámok zobrazených v sekcii „Prevádzkové poznámky“.
+
+**Dôležité upozornenie:** toto **nie je skutočné zabezpečenie**. Web je čisto statický (žiadny backend), takže kód je viditeľný v zdrojovom súbore `data/staff.json` pre kohokoľvek, kto by si to overil (napr. cez „zobraziť zdrojový kód“ alebo priamym otvorením súboru). Funguje len ako jednoduchá zábrana pred náhodnými návštevníkmi a vyhľadávačmi (stránka má navyše `noindex`, takže ju Google neindexuje) — nie ako ochrana citlivých údajov.
+
+---
+
+## 11. Ako pridať obrázky do galérie
 
 1. Vlož obrázok (jpg/png/svg/webp) do `assets/images/`.
 2. Otvor `data/gallery.json` a pridaj nový záznam:
@@ -224,7 +256,7 @@ Obrázok sa automaticky zobrazí v galérii a po kliknutí sa otvorí vo fullscr
 
 ---
 
-## 11. Ako nahrať web na GitHub
+## 12. Ako nahrať web na GitHub
 
 1. Vytvor nový repozitár na GitHube (napr. `marea-yacht-bar`).
 2. V priečinku projektu spusti:
@@ -240,7 +272,7 @@ git push -u origin main
 
 ---
 
-## 12. Ako aktivovať GitHub Pages
+## 13. Ako aktivovať GitHub Pages
 
 1. Otvor repozitár na GitHube.
 2. Choď do **Settings → Pages**.

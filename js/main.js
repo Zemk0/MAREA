@@ -780,6 +780,164 @@
     if (el) el.textContent = String(new Date().getFullYear());
   }
 
+  /* -------------------- Staff area (zamestnanci.html) --------------------
+     Client-side only: the "access code" gate is a soft deterrent (keeps
+     casual visitors and search engines out of the flow), not real security —
+     the code lives in a public JSON file, like everything else on this
+     static site. Good enough for an internal FiveM RP staff shortcut shared
+     over Discord, not for protecting anything actually sensitive. */
+
+  function setupStaffGate(staff) {
+    const gate = qs("#staff-gate");
+    const content = qs("#staff-content");
+    const form = qs("#staff-gate-form");
+    if (!gate || !content || !form) return;
+
+    const input = qs("#staff-gate-input", form);
+    const errorMsg = qs("#staff-gate-error");
+    const accessCode = staff?.accessCode;
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!accessCode) {
+        if (errorMsg) errorMsg.hidden = false;
+        return;
+      }
+
+      const entered = (input.value || "").trim();
+      if (entered.toLowerCase() === accessCode.toLowerCase()) {
+        gate.hidden = true;
+        content.hidden = false;
+        observeReveal();
+      } else if (errorMsg) {
+        errorMsg.hidden = false;
+        input.select();
+      }
+    });
+  }
+
+  function renderStaffNotes(staff) {
+    const list = qs("#staff-notes");
+    if (!list) return;
+
+    const notes = staff?.notes;
+    if (!Array.isArray(notes) || !notes.length) {
+      list.innerHTML = `<li>Momentálne nie sú k dispozícii žiadne prevádzkové poznámky.</li>`;
+      return;
+    }
+
+    list.innerHTML = notes.map((note) => `<li>${escapeHTML(note)}</li>`).join("");
+  }
+
+  function renderStaffPage(staff) {
+    setupStaffGate(staff);
+    renderStaffNotes(staff);
+  }
+
+  // Order calculator — independent from the public Menu page's own cache,
+  // since renderMenu() no-ops on pages without #menu-grid.
+  let calcMenuCache = [];
+  let calcQuantities = {};
+  let calcDiscountApplied = false;
+
+  function calcLineTotal(item, index) {
+    const qty = calcQuantities[index] || 0;
+    const unitPrice = calcDiscountApplied && item.memberPrice != null ? item.memberPrice : item.price;
+    return qty * unitPrice;
+  }
+
+  function updateCalcTotals() {
+    const total = calcMenuCache.reduce((sum, item, index) => sum + calcLineTotal(item, index), 0);
+
+    calcMenuCache.forEach((item, index) => {
+      const subtotalEl = qs(`#calc-subtotal-${index}`);
+      if (subtotalEl) subtotalEl.textContent = formatPrice(calcLineTotal(item, index));
+
+      const qtyEl = qs(`#calc-qty-${index}`);
+      if (qtyEl) qtyEl.textContent = String(calcQuantities[index] || 0);
+    });
+
+    const totalEl = qs("#calc-total-value");
+    if (totalEl) totalEl.textContent = formatPrice(total);
+  }
+
+  function renderStaffCalculator(items) {
+    const list = qs("#calc-list");
+    if (!list) return;
+
+    if (!Array.isArray(items) || !items.length) {
+      list.innerHTML = `<p class="state-empty">Menu momentálne nie je k dispozícii.</p>`;
+      return;
+    }
+
+    calcMenuCache = items;
+    calcQuantities = {};
+
+    list.innerHTML = items
+      .map(
+        (item, index) => `
+      <div class="calc-row" data-index="${index}">
+        <div class="calc-row-info">
+          <div class="calc-row-name">${escapeHTML(item.name)}</div>
+          <div class="calc-row-price">
+            ${formatPrice(item.price)}${item.memberPrice != null ? ` <span class="calc-row-price-member">(${formatPrice(item.memberPrice)} Black Card)</span>` : ""}
+          </div>
+        </div>
+        <div class="calc-row-qty">
+          <button type="button" class="calc-qty-btn" data-action="dec" aria-label="Ubrať ${escapeHTML(item.name)}">−</button>
+          <span class="calc-qty-value" id="calc-qty-${index}">0</span>
+          <button type="button" class="calc-qty-btn" data-action="inc" aria-label="Pridať ${escapeHTML(item.name)}">+</button>
+        </div>
+        <div class="calc-row-subtotal" id="calc-subtotal-${index}">0$</div>
+      </div>`
+      )
+      .join("");
+
+    updateCalcTotals();
+    setupCalculator();
+  }
+
+  function setupCalculator() {
+    const list = qs("#calc-list");
+    const discountToggle = qs("#calc-discount-toggle");
+    const resetBtn = qs("#calc-reset");
+    if (!list || list.dataset.bound) return;
+    list.dataset.bound = "true";
+
+    list.addEventListener("click", (event) => {
+      const btn = event.target.closest(".calc-qty-btn");
+      if (!btn) return;
+      const row = btn.closest(".calc-row");
+      const index = Number(row.dataset.index);
+      const current = calcQuantities[index] || 0;
+
+      if (btn.dataset.action === "inc") {
+        calcQuantities[index] = current + 1;
+      } else {
+        calcQuantities[index] = Math.max(0, current - 1);
+      }
+
+      updateCalcTotals();
+    });
+
+    if (discountToggle) {
+      discountToggle.addEventListener("change", () => {
+        calcDiscountApplied = discountToggle.checked;
+        updateCalcTotals();
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener("click", () => {
+        calcQuantities = {};
+        if (discountToggle) discountToggle.checked = false;
+        calcDiscountApplied = false;
+        updateCalcTotals();
+      });
+    }
+  }
+
   /* -------------------- Init -------------------- */
 
   async function init() {
@@ -801,6 +959,8 @@
       loadEvents().then(renderEvents),
       loadGallery().then(renderGallery),
       loadContacts().then(renderContacts),
+      loadMenu().then(renderStaffCalculator),
+      loadStaff().then(renderStaffPage),
     ]);
 
     results.forEach((result) => {

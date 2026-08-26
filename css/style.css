@@ -1482,6 +1482,195 @@ section {
   color: var(--text-muted);
 }
 
+.staff-link {
+  margin-left: 0.7rem;
+  color: var(--text-muted);
+  text-decoration: underline;
+  opacity: 0.6;
+  font-size: 0.72rem;
+  transition: opacity var(--transition-fast);
+}
+
+.staff-link:hover {
+  opacity: 1;
+}
+
+/* -------------------- Staff area (zamestnanci.html) -------------------- */
+.staff-gate-card {
+  max-width: 480px;
+  margin-inline: auto;
+  text-align: center;
+  padding: 2.6rem 2.2rem;
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+  border: 1px solid rgba(217, 195, 150, 0.16);
+  border-radius: var(--radius-lg);
+}
+
+.staff-gate-form {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.staff-gate-input {
+  flex: 1 1 200px;
+  padding: 0.85rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(217, 195, 150, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.staff-gate-input:focus {
+  outline: none;
+  border-color: var(--gold-400);
+}
+
+.staff-gate-error {
+  margin-top: 1.1rem;
+  color: #e0a3a3;
+  font-size: 0.85rem;
+}
+
+.calc-discount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-bottom: 1.8rem;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.calc-discount input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--gold-400);
+  cursor: pointer;
+}
+
+.calc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.calc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.3rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(217, 195, 150, 0.12);
+  border-radius: var(--radius-md);
+  flex-wrap: wrap;
+}
+
+.calc-row-name {
+  color: var(--white);
+  font-size: 0.95rem;
+}
+
+.calc-row-price {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.calc-row-price-member {
+  color: var(--gold-400);
+}
+
+.calc-row-qty {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-left: auto;
+}
+
+.calc-qty-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(217, 195, 150, 0.3);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--gold-300);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.calc-qty-btn:hover {
+  background: rgba(217, 195, 150, 0.18);
+  border-color: var(--gold-400);
+}
+
+.calc-qty-value {
+  min-width: 1.4rem;
+  text-align: center;
+  color: var(--white);
+  font-family: var(--font-display);
+}
+
+.calc-row-subtotal {
+  min-width: 70px;
+  text-align: right;
+  font-family: var(--font-display);
+  color: var(--gold-300);
+}
+
+.calc-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 720px;
+  margin: 1.8rem auto 0;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(217, 195, 150, 0.16);
+  flex-wrap: wrap;
+}
+
+.calc-total {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--gold-400);
+}
+
+.staff-notes {
+  max-width: 720px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.staff-notes li {
+  position: relative;
+  padding-left: 1.4rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.staff-notes li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold-400);
+}
+
 /* -------------------- Utility -------------------- */
 .text-center {
   text-align: center;

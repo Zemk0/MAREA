@@ -36,6 +36,7 @@ const DATA_PATHS = {
   gallery: "data/gallery.json",
   jobs: "data/jobs.json",
   partners: "data/partners.json",
+  staff: "data/staff.json",
 };
 
 function loadNavigation() {
@@ -72,4 +73,8 @@ function loadJobs() {
 
 function loadPartners() {
   return fetchJSON(DATA_PATHS.partners, []);
+}
+
+function loadStaff() {
+  return fetchJSON(DATA_PATHS.staff, null);
 }
