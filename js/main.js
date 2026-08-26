@@ -382,7 +382,7 @@
 
   /* -------------------- Info modal (Services / Events) -------------------- */
 
-  function openInfoModal({ eyebrow, title, meta, mediaHTML, body }) {
+  function openInfoModal({ eyebrow, title, meta, mediaHTML, body, layout = "stack" }) {
     const modal = qs("#info-modal");
     if (!modal) return;
 
@@ -391,6 +391,7 @@
     qs("#info-modal-meta", modal).textContent = meta || "";
     qs("#info-modal-desc", modal).textContent = body || "";
     qs("#info-modal-media", modal).innerHTML = mediaHTML || "";
+    qs("#info-modal-content", modal).classList.toggle("is-split", layout === "split");
 
     modal.classList.add("is-open");
     document.body.style.overflow = "hidden";
@@ -466,6 +467,7 @@
       mediaHTML: `<img src="${escapeHTML(event.image)}" alt="${escapeHTML(event.name)}"
                        onerror="this.remove();">`,
       body: event.details || event.description,
+      layout: "split",
     });
   }
 
