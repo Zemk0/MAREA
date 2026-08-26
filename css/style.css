@@ -722,6 +722,91 @@ section {
 }
 
 /* -------------------- Menu -------------------- */
+.price-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  margin-bottom: 1.8rem;
+  flex-wrap: wrap;
+}
+
+.price-toggle-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.price-toggle-label.is-active {
+  color: var(--gold-300);
+  font-weight: 600;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.switch input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(217, 195, 150, 0.3);
+  border-radius: 999px;
+  transition: background var(--transition-fast);
+}
+
+.switch-slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  top: 3px;
+  background: var(--gold-300);
+  border-radius: 50%;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.switch input:checked + .switch-slider {
+  background: rgba(217, 195, 150, 0.35);
+}
+
+.switch input:checked + .switch-slider::before {
+  transform: translateX(20px);
+  background: var(--gold-400);
+}
+
+.switch input:focus-visible + .switch-slider {
+  outline: 2px solid var(--gold-400);
+  outline-offset: 2px;
+}
+
+.menu-item-price-original {
+  display: block;
+  text-decoration: line-through;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-family: var(--font-body);
+}
+
+.menu-item-price-member {
+  display: block;
+  color: var(--gold-400);
+}
+
 .menu-filters {
   display: flex;
   flex-wrap: wrap;
@@ -769,7 +854,7 @@ section {
 .menu-item-head {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-start;
   gap: 0.8rem;
   margin-bottom: 0.55rem;
 }
@@ -786,6 +871,7 @@ section {
   font-size: 1.1rem;
   color: var(--gold-400);
   white-space: nowrap;
+  text-align: right;
 }
 
 .menu-item-desc {

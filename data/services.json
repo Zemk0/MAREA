@@ -23,7 +23,7 @@
   {
     "name": "Black Card VIP Membership",
     "description": "Exkluzívne výhody pre členov, vrátane súkromných eventov a špeciálnych ponúk.",
-    "details": "Členstvo Black Card prináša celoročné výhody — prioritné rezervácie, zľavy na súkromné eventy, pozvánky na uzavreté akcie a osobného kontaktného manažéra.",
+    "details": "Členstvo Black Card prináša celoročné výhody — prioritné rezervácie, zľavy na súkromné eventy, pozvánky na uzavreté akcie.",
     "price": "1.500.000$ / mesiac",
     "icon": "diamond"
   },
@@ -31,14 +31,14 @@
     "name": "Súkromný event",
     "description": "Vyhradená časť jachty pre váš event vrátane obsluhy a hudobného programu.",
     "details": "Vyhradíme ti časť jachty presne podľa tvojich predstáv — vrátane vlastnej obsluhy, hudobného programu a úpravy priestoru. Vhodné pre menšie oslavy a stretnutia.",
-    "price": "na vyžiadanie | 1.000.000$",
+    "price": "na vyžiadanie | 1.000.000$/hodina",
     "icon": "sparkles"
   },
   {
     "name": "Prenájom celej jachty",
     "description": "Exkluzívny prenájom celej MARÉA pre súkromnú akciu, oslavu alebo stretnutie.",
-    "details": "Celá MARÉA je tvoja — od baru cez palubu až po VIP zóny. Zahŕňa kompletný personál, vlastný hudobný program a možnosť prispôsobiť menu podľa priania.",
-    "price": "na vyžiadanie | 2.500.000$",
+    "details": "Celá MARÉA je tvoja — od baru cez palubu až po VIP zóny. Zahŕňa kompletný personál a vlastný hudobný program priania.",
+    "price": "na vyžiadanie | 2.500.000$/hodina",
     "icon": "yacht"
   },
   {

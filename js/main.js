@@ -168,6 +168,7 @@
 
   let menuItemsCache = [];
   let activeCategory = "all";
+  let priceMode = "standard"; // "standard" | "member"
 
   const CATEGORY_LABELS = {
     all: "Všetko",
@@ -190,17 +191,25 @@
     }
 
     grid.innerHTML = filtered
-      .map(
-        (item) => `
+      .map((item) => {
+        const showMember = priceMode === "member" && item.memberPrice != null;
+        const priceMarkup = showMember
+          ? `<span class="menu-item-price">
+               <span class="menu-item-price-original">${formatPrice(item.price)}</span>
+               <span class="menu-item-price-member">${formatPrice(item.memberPrice)}</span>
+             </span>`
+          : `<span class="menu-item-price">${formatPrice(item.price)}</span>`;
+
+        return `
       <article class="card menu-item reveal is-visible">
         <div class="menu-item-head">
           <h3 class="menu-item-name">${escapeHTML(item.name)}</h3>
-          <span class="menu-item-price">${formatPrice(item.price)}</span>
+          ${priceMarkup}
         </div>
         <p class="menu-item-desc">${escapeHTML(item.description)}</p>
         <span class="menu-item-category">${escapeHTML(CATEGORY_LABELS[item.category] || item.category)}</span>
-      </article>`
-      )
+      </article>`;
+      })
       .join("");
   }
 
@@ -241,7 +250,24 @@
 
     menuItemsCache = items;
     setupMenuFilters(items);
+    setupPriceToggle();
     renderMenuItems(items);
+  }
+
+  function setupPriceToggle() {
+    const toggle = qs("#price-mode-toggle");
+    if (!toggle || toggle.dataset.bound) return;
+    toggle.dataset.bound = "true";
+
+    const labels = qsa(".price-toggle-label");
+
+    toggle.addEventListener("change", () => {
+      priceMode = toggle.checked ? "member" : "standard";
+      labels.forEach((label) => {
+        label.classList.toggle("is-active", label.dataset.mode === priceMode);
+      });
+      renderMenuItems(menuItemsCache);
+    });
   }
 
   /* -------------------- Render: Services -------------------- */

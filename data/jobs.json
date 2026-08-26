@@ -2,7 +2,7 @@
   {
     "title": "Bartender / Barmanka",
     "description": "Príprava signature koktailov, starostlivosť o hostí pri bare a udržiavanie prémiovej atmosféry MARÉA.",
-    "salary": "80.000$/hodina + tringelt",
+    "salary": "80.000$/hodina + díško",
     "icon": "cocktail"
   },
   {
@@ -14,7 +14,7 @@
   {
     "title": "Bezpečnostná služba",
     "description": "Zabezpečenie hladkého priebehu eventov, preprava hostí, predaj vstupeniek a bezpečnosti posádky.",
-    "salary": "90.000$/ hodina (+ tringelt pohladník)",
+    "salary": "90.000$/ hodina (+ díško pohladník)",
     "icon": "shield"
   }
 ]
