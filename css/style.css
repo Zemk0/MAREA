@@ -1525,9 +1525,9 @@ section {
 .calc-discount {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.7rem;
-  margin-bottom: 1.8rem;
+  margin-top: auto;
+  padding-top: 1rem;
   font-size: 0.92rem;
   color: var(--text-primary);
   cursor: pointer;
@@ -1555,71 +1555,66 @@ section {
   gap: 1.8rem;
   max-width: 960px;
   margin-inline: auto;
-  align-items: start;
+  align-items: stretch;
 }
 
-.calc-table-wrap {
+.calc-menu-panel,
+.calc-cart-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.calc-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
   max-height: 420px;
   overflow-y: auto;
-  border: 1px solid rgba(217, 195, 150, 0.16);
-  border-radius: var(--radius-md);
+  padding: 0.2rem;
+  margin-bottom: 1.4rem;
 }
 
-.calc-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.calc-table thead th {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  background: var(--navy-900);
+.calc-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.25rem;
+  min-height: 64px;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(217, 195, 150, 0.2);
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
   text-align: left;
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--gold-400);
-  padding: 0.8rem 1rem;
-  border-bottom: 1px solid rgba(217, 195, 150, 0.2);
+  transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
 }
 
-.calc-table thead th:last-child {
-  text-align: right;
+.calc-tile:hover {
+  border-color: var(--gold-400);
+  transform: translateY(-2px);
 }
 
-.calc-table-row {
-  cursor: pointer;
-  border-bottom: 1px solid rgba(217, 195, 150, 0.08);
-  transition: background var(--transition-fast);
-}
-
-.calc-table-row:last-child {
-  border-bottom: none;
-}
-
-.calc-table-row:hover,
-.calc-table-row:focus-visible {
-  background: rgba(217, 195, 150, 0.08);
-}
-
-.calc-table-row.is-added {
+.calc-tile.is-added {
+  border-color: var(--gold-400);
   background: rgba(217, 195, 150, 0.12);
 }
 
-.calc-table-name,
-.calc-table-price {
-  padding: 0.7rem 1rem;
-  font-size: 0.86rem;
-  color: var(--text-primary);
+.calc-tile-name {
+  font-size: 0.78rem;
+  color: var(--white);
+  line-height: 1.25;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.calc-table-price {
-  position: relative;
-  text-align: right;
-  white-space: nowrap;
-  font-family: var(--font-display);
+.calc-tile-price {
+  font-size: 0.76rem;
   color: var(--gold-300);
+  font-family: var(--font-display);
 }
 
 .calc-chip-badge {
@@ -1740,7 +1735,7 @@ section {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-top: 1.2rem;
+  margin-top: auto;
   padding-top: 1.2rem;
   border-top: 1px solid rgba(217, 195, 150, 0.16);
   flex-wrap: wrap;

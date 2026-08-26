@@ -864,7 +864,7 @@
       .filter(({ item }) => calcCategory === "all" || item.category === calcCategory);
 
     if (!entries.length) {
-      picker.innerHTML = `<tr><td colspan="2" class="menu-empty">V tejto kategórii momentálne nemáme žiadne položky.</td></tr>`;
+      picker.innerHTML = `<p class="menu-empty">V tejto kategórii momentálne nemáme žiadne položky.</p>`;
       return;
     }
 
@@ -872,14 +872,12 @@
       .map(({ item, index }) => {
         const qty = calcCart[index] || 0;
         return `
-      <tr class="calc-table-row${qty > 0 ? " is-added" : ""}" data-index="${index}" tabindex="0" role="button"
-          aria-label="Pridať ${escapeHTML(item.name)} do košíka">
-        <td class="calc-table-name">${escapeHTML(item.name)}</td>
-        <td class="calc-table-price">
-          ${formatPrice(calcUnitPrice(item))}
-          ${qty > 0 ? `<span class="calc-chip-badge">${qty}</span>` : ""}
-        </td>
-      </tr>`;
+      <button type="button" class="calc-tile${qty > 0 ? " is-added" : ""}" data-index="${index}"
+              aria-label="Pridať ${escapeHTML(item.name)} do košíka">
+        <span class="calc-tile-name">${escapeHTML(item.name)}</span>
+        <span class="calc-tile-price">${formatPrice(calcUnitPrice(item))}</span>
+        ${qty > 0 ? `<span class="calc-chip-badge">${qty}</span>` : ""}
+      </button>`;
       })
       .join("");
   }
@@ -980,19 +978,9 @@
     if (!picker.dataset.bound) {
       picker.dataset.bound = "true";
       picker.addEventListener("click", (event) => {
-        const row = event.target.closest(".calc-table-row");
-        if (!row) return;
-        const index = Number(row.dataset.index);
-        calcCart[index] = (calcCart[index] || 0) + 1;
-        updateCalcTotals();
-      });
-
-      picker.addEventListener("keydown", (event) => {
-        if (event.key !== "Enter" && event.key !== " ") return;
-        const row = event.target.closest(".calc-table-row");
-        if (!row) return;
-        event.preventDefault();
-        const index = Number(row.dataset.index);
+        const tile = event.target.closest(".calc-tile");
+        if (!tile) return;
+        const index = Number(tile.dataset.index);
         calcCart[index] = (calcCart[index] || 0) + 1;
         updateCalcTotals();
       });

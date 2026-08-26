@@ -29,9 +29,13 @@
     grid-template-columns: 1fr;
   }
 
-  .calc-table-wrap,
+  .calc-picker-grid,
   .calc-cart {
     max-height: 320px;
+  }
+
+  .calc-picker-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .nav-links {
@@ -102,6 +106,10 @@
 @media (max-width: 600px) {
   section {
     padding-block: var(--space-xl);
+  }
+
+  .calc-picker-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .container {
