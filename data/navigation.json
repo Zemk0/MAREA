@@ -38,5 +38,9 @@
   {
     "label": "Kontakt",
     "href": "./kontakt.html"
+  },
+  {
+    "label": "Zamestnanci",
+    "href": "./zamestnanci.html"
   }
 ]

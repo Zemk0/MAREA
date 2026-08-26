@@ -16,7 +16,7 @@ Web je rozdelený na **7 HTML stránok**, ktoré zdieľajú rovnakú navigáciu,
 | `praca.html` | Otvorené pozície + odkaz na Discord |
 | `partneri.html` | Partneri MARÉA |
 | `kontakt.html` | Kontakt, vedenie a odkaz na Discord |
-| `zamestnanci.html` | Interná zóna pre personál (kalkulačka, poznámky) — chránená prístupovým kódom, nie je v hlavnej navigácii |
+| `zamestnanci.html` | Interná zóna pre personál (kalkulačka, poznámky) — chránená prístupovým kódom |
 
 ---
 
@@ -213,9 +213,9 @@ Otvor `data/partners.json`:
 
 ## 10. Interná zóna pre zamestnancov (stránka Zamestnanci)
 
-Stránka `zamestnanci.html` **nie je** v hlavnej navigácii ani vo `footer-nav` — nájdeš ju len cez malý nenápadný odkaz „Personál“ celkom dole v pätičke každej stránky. Obsahuje:
+Stránka `zamestnanci.html` je súčasťou hlavnej navigácie aj pätičky (rovnako ako ostatné stránky, cez `data/navigation.json`). Obsahuje:
 
-- **Kalkulačku objednávky** — zoznam všetkých položiek z `data/menu.json` s tlačidlami na pridanie/ubranie kusu a prepínačom „Zákazník má Black Card“, ktorý prepočíta ceny na `memberPrice`. Súčet sa počíta priamo v prehliadači, nič sa nikam neukladá — po obnovení stránky sa vynuluje.
+- **Kalkulačku objednávky** — funguje ako košík: klikneš na položku v zozname menu (s filtrom kategórií) a pridá sa do košíka nižšie, kde jej upravuješ počet kusmi cez tlačidlá +/− alebo ju úplne odstrániš krížikom. Prepínač „Zákazník má Black Card“ prepočíta ceny všetkých položiek na `memberPrice`. Súčet sa počíta priamo v prehliadači, nič sa nikam neukladá — po obnovení stránky sa vynuluje.
 - **Prevádzkové poznámky**, **Pozície a platy** (z `data/jobs.json`) a **Kontakt na vedenie** (z `data/contacts.json`) — rovnaké karty, aké poznáš z verejných stránok.
 
 ### Prístupový kód

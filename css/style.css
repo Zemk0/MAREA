@@ -1482,19 +1482,6 @@ section {
   color: var(--text-muted);
 }
 
-.staff-link {
-  margin-left: 0.7rem;
-  color: var(--text-muted);
-  text-decoration: underline;
-  opacity: 0.6;
-  font-size: 0.72rem;
-  transition: opacity var(--transition-fast);
-}
-
-.staff-link:hover {
-  opacity: 1;
-}
-
 /* -------------------- Staff area (zamestnanci.html) -------------------- */
 .staff-gate-card {
   max-width: 480px;
@@ -1553,7 +1540,76 @@ section {
   cursor: pointer;
 }
 
-.calc-list {
+.calc-subheading {
+  text-align: center;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-400);
+  margin-bottom: 1rem;
+}
+
+.calc-picker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  max-width: 760px;
+  margin: 0 auto 2.2rem;
+}
+
+.calc-chip {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  padding: 0.7rem 1.1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(217, 195, 150, 0.2);
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+}
+
+.calc-chip:hover {
+  border-color: var(--gold-400);
+  transform: translateY(-2px);
+}
+
+.calc-chip.is-added {
+  border-color: var(--gold-400);
+  background: rgba(217, 195, 150, 0.12);
+}
+
+.calc-chip-name {
+  font-size: 0.86rem;
+  color: var(--white);
+}
+
+.calc-chip-price {
+  font-size: 0.78rem;
+  color: var(--gold-300);
+  font-family: var(--font-display);
+}
+
+.calc-chip-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: var(--gold-400);
+  color: var(--navy-900);
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calc-cart {
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
@@ -1561,37 +1617,36 @@ section {
   margin-inline: auto;
 }
 
-.calc-row {
+.calc-cart-empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 1.6rem 1rem;
+  border: 1px dashed rgba(217, 195, 150, 0.25);
+  border-radius: var(--radius-md);
+}
+
+.calc-cart-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 1.3rem;
+  padding: 0.9rem 1.2rem;
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(217, 195, 150, 0.12);
+  border: 1px solid rgba(217, 195, 150, 0.14);
   border-radius: var(--radius-md);
   flex-wrap: wrap;
 }
 
-.calc-row-name {
+.calc-cart-name {
+  flex: 1 1 140px;
   color: var(--white);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
 }
 
-.calc-row-price {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-.calc-row-price-member {
-  color: var(--gold-400);
-}
-
-.calc-row-qty {
+.calc-cart-qty {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  margin-left: auto;
+  gap: 0.6rem;
 }
 
 .calc-qty-btn {
@@ -1620,11 +1675,28 @@ section {
   font-family: var(--font-display);
 }
 
-.calc-row-subtotal {
-  min-width: 70px;
+.calc-cart-subtotal {
+  min-width: 65px;
   text-align: right;
   font-family: var(--font-display);
   color: var(--gold-300);
+}
+
+.calc-cart-remove {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.calc-cart-remove:hover {
+  color: #e0a3a3;
+  border-color: rgba(224, 163, 163, 0.4);
 }
 
 .calc-summary {

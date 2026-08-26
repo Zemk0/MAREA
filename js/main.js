@@ -48,6 +48,7 @@
     { label: "Práca", href: "praca.html" },
     { label: "Partneri", href: "partneri.html" },
     { label: "Kontakt", href: "kontakt.html" },
+    { label: "Zamestnanci", href: "zamestnanci.html" },
   ];
 
   function renderNavigation(items) {
@@ -836,103 +837,184 @@
   }
 
   // Order calculator — independent from the public Menu page's own cache,
-  // since renderMenu() no-ops on pages without #menu-grid.
+  // since renderMenu() no-ops on pages without #menu-grid. Cart-style flow:
+  // click a menu item to add it to the cart, then adjust qty (+/−) there.
   let calcMenuCache = [];
-  let calcQuantities = {};
+  let calcCart = {}; // index -> qty; only entries > 0 count as "in the cart"
   let calcDiscountApplied = false;
+  let calcCategory = "all";
 
-  function calcLineTotal(item, index) {
-    const qty = calcQuantities[index] || 0;
-    const unitPrice = calcDiscountApplied && item.memberPrice != null ? item.memberPrice : item.price;
-    return qty * unitPrice;
+  function calcUnitPrice(item) {
+    return calcDiscountApplied && item.memberPrice != null ? item.memberPrice : item.price;
+  }
+
+  function calcTotal() {
+    return Object.entries(calcCart).reduce((sum, [index, qty]) => {
+      const item = calcMenuCache[index];
+      return item ? sum + qty * calcUnitPrice(item) : sum;
+    }, 0);
+  }
+
+  function renderCalcPicker() {
+    const picker = qs("#calc-picker");
+    if (!picker) return;
+
+    const entries = calcMenuCache
+      .map((item, index) => ({ item, index }))
+      .filter(({ item }) => calcCategory === "all" || item.category === calcCategory);
+
+    if (!entries.length) {
+      picker.innerHTML = `<p class="menu-empty">V tejto kategórii momentálne nemáme žiadne položky.</p>`;
+      return;
+    }
+
+    picker.innerHTML = entries
+      .map(({ item, index }) => {
+        const qty = calcCart[index] || 0;
+        return `
+      <button type="button" class="calc-chip${qty > 0 ? " is-added" : ""}" data-index="${index}">
+        <span class="calc-chip-name">${escapeHTML(item.name)}</span>
+        <span class="calc-chip-price">${formatPrice(calcUnitPrice(item))}</span>
+        ${qty > 0 ? `<span class="calc-chip-badge">${qty}</span>` : ""}
+      </button>`;
+      })
+      .join("");
+  }
+
+  function renderCalcCart() {
+    const cart = qs("#calc-cart");
+    if (!cart) return;
+
+    const entries = Object.entries(calcCart).filter(([, qty]) => qty > 0);
+
+    if (!entries.length) {
+      cart.innerHTML = `<p class="calc-cart-empty">Košík je prázdny — klikni na položku vyššie a pridaj ju sem.</p>`;
+      return;
+    }
+
+    cart.innerHTML = entries
+      .map(([index, qty]) => {
+        const item = calcMenuCache[index];
+        if (!item) return "";
+        return `
+      <div class="calc-cart-row" data-index="${index}">
+        <div class="calc-cart-name">${escapeHTML(item.name)}</div>
+        <div class="calc-cart-qty">
+          <button type="button" class="calc-qty-btn" data-action="dec" aria-label="Ubrať ${escapeHTML(item.name)}">−</button>
+          <span class="calc-qty-value">${qty}</span>
+          <button type="button" class="calc-qty-btn" data-action="inc" aria-label="Pridať ${escapeHTML(item.name)}">+</button>
+        </div>
+        <div class="calc-cart-subtotal">${formatPrice(qty * calcUnitPrice(item))}</div>
+        <button type="button" class="calc-cart-remove" data-action="remove" aria-label="Odstrániť ${escapeHTML(item.name)} z košíka">✕</button>
+      </div>`;
+      })
+      .join("");
   }
 
   function updateCalcTotals() {
-    const total = calcMenuCache.reduce((sum, item, index) => sum + calcLineTotal(item, index), 0);
-
-    calcMenuCache.forEach((item, index) => {
-      const subtotalEl = qs(`#calc-subtotal-${index}`);
-      if (subtotalEl) subtotalEl.textContent = formatPrice(calcLineTotal(item, index));
-
-      const qtyEl = qs(`#calc-qty-${index}`);
-      if (qtyEl) qtyEl.textContent = String(calcQuantities[index] || 0);
-    });
-
+    renderCalcPicker();
+    renderCalcCart();
     const totalEl = qs("#calc-total-value");
-    if (totalEl) totalEl.textContent = formatPrice(total);
+    if (totalEl) totalEl.textContent = formatPrice(calcTotal());
+  }
+
+  function setupCalcFilters() {
+    const filterBar = qs("#calc-filters");
+    if (!filterBar) return;
+
+    const categories = ["all", ...new Set(calcMenuCache.map((item) => item.category))];
+
+    filterBar.innerHTML = categories
+      .map(
+        (cat, i) => `
+      <button type="button" class="filter-btn${i === 0 ? " is-active" : ""}" data-category="${escapeHTML(cat)}">
+        ${escapeHTML(CATEGORY_LABELS[cat] || cat)}
+      </button>`
+      )
+      .join("");
+
+    if (filterBar.dataset.bound) return;
+    filterBar.dataset.bound = "true";
+
+    filterBar.addEventListener("click", (event) => {
+      const btn = event.target.closest(".filter-btn");
+      if (!btn) return;
+
+      qsa(".filter-btn", filterBar).forEach((b) => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+      calcCategory = btn.dataset.category;
+      renderCalcPicker();
+    });
   }
 
   function renderStaffCalculator(items) {
-    const list = qs("#calc-list");
-    if (!list) return;
+    const picker = qs("#calc-picker");
+    if (!picker) return;
 
     if (!Array.isArray(items) || !items.length) {
-      list.innerHTML = `<p class="state-empty">Menu momentálne nie je k dispozícii.</p>`;
+      picker.innerHTML = `<p class="state-empty">Menu momentálne nie je k dispozícii.</p>`;
       return;
     }
 
     calcMenuCache = items;
-    calcQuantities = {};
+    calcCart = {};
+    calcCategory = "all";
 
-    list.innerHTML = items
-      .map(
-        (item, index) => `
-      <div class="calc-row" data-index="${index}">
-        <div class="calc-row-info">
-          <div class="calc-row-name">${escapeHTML(item.name)}</div>
-          <div class="calc-row-price">
-            ${formatPrice(item.price)}${item.memberPrice != null ? ` <span class="calc-row-price-member">(${formatPrice(item.memberPrice)} Black Card)</span>` : ""}
-          </div>
-        </div>
-        <div class="calc-row-qty">
-          <button type="button" class="calc-qty-btn" data-action="dec" aria-label="Ubrať ${escapeHTML(item.name)}">−</button>
-          <span class="calc-qty-value" id="calc-qty-${index}">0</span>
-          <button type="button" class="calc-qty-btn" data-action="inc" aria-label="Pridať ${escapeHTML(item.name)}">+</button>
-        </div>
-        <div class="calc-row-subtotal" id="calc-subtotal-${index}">0$</div>
-      </div>`
-      )
-      .join("");
-
+    setupCalcFilters();
     updateCalcTotals();
     setupCalculator();
   }
 
   function setupCalculator() {
-    const list = qs("#calc-list");
+    const picker = qs("#calc-picker");
+    const cart = qs("#calc-cart");
     const discountToggle = qs("#calc-discount-toggle");
     const resetBtn = qs("#calc-reset");
-    if (!list || list.dataset.bound) return;
-    list.dataset.bound = "true";
+    if (!picker || !cart) return;
 
-    list.addEventListener("click", (event) => {
-      const btn = event.target.closest(".calc-qty-btn");
-      if (!btn) return;
-      const row = btn.closest(".calc-row");
-      const index = Number(row.dataset.index);
-      const current = calcQuantities[index] || 0;
+    if (!picker.dataset.bound) {
+      picker.dataset.bound = "true";
+      picker.addEventListener("click", (event) => {
+        const chip = event.target.closest(".calc-chip");
+        if (!chip) return;
+        const index = Number(chip.dataset.index);
+        calcCart[index] = (calcCart[index] || 0) + 1;
+        updateCalcTotals();
+      });
+    }
 
-      if (btn.dataset.action === "inc") {
-        calcQuantities[index] = current + 1;
-      } else {
-        calcQuantities[index] = Math.max(0, current - 1);
-      }
+    if (!cart.dataset.bound) {
+      cart.dataset.bound = "true";
+      cart.addEventListener("click", (event) => {
+        const actionBtn = event.target.closest("[data-action]");
+        const row = event.target.closest(".calc-cart-row");
+        if (!actionBtn || !row) return;
+        const index = Number(row.dataset.index);
 
-      updateCalcTotals();
-    });
+        if (actionBtn.dataset.action === "inc") {
+          calcCart[index] = (calcCart[index] || 0) + 1;
+        } else if (actionBtn.dataset.action === "dec") {
+          calcCart[index] = Math.max(0, (calcCart[index] || 0) - 1);
+        } else if (actionBtn.dataset.action === "remove") {
+          calcCart[index] = 0;
+        }
 
-    if (discountToggle) {
+        updateCalcTotals();
+      });
+    }
+
+    if (discountToggle && !discountToggle.dataset.bound) {
+      discountToggle.dataset.bound = "true";
       discountToggle.addEventListener("change", () => {
         calcDiscountApplied = discountToggle.checked;
         updateCalcTotals();
       });
     }
 
-    if (resetBtn) {
+    if (resetBtn && !resetBtn.dataset.bound) {
+      resetBtn.dataset.bound = "true";
       resetBtn.addEventListener("click", () => {
-        calcQuantities = {};
-        if (discountToggle) discountToggle.checked = false;
-        calcDiscountApplied = false;
+        calcCart = {};
         updateCalcTotals();
       });
     }
