@@ -2,49 +2,43 @@
   {
     "name": "Vstup na MARÉA",
     "description": "Základný vstup na palubu s prístupom do hlavného baru a oddychových zón.",
-    "price": "od 50$",
+    "price": "10.000$",
     "icon": "anchor"
   },
   {
     "name": "Vstup Plus",
     "description": "Rozšírený vstup, uvítací drink a daľsie výhody.",
-    "price": "od 150$",
+    "price": "30.000$",
     "icon": "crown"
   },
   {
     "name": "VIP vstup",
     "description": "Prioritný vstup, vyhradená zóna, uvítací drink a osobný servis.",
-    "price": "od 200$",
+    "price": "70.000$",
     "icon": "star"
   },
   {
     "name": "Black Card VIP Membership",
     "description": "Exkluzívne výhody pre členov, vrátane súkromných eventov a špeciálnych ponúk.",
-    "price": "od 500$",
+    "price": "1.500.000$ / mesiac",
     "icon": "diamond"
   },
   {
     "name": "Súkromný event",
     "description": "Vyhradená časť jachty pre váš event vrátane obsluhy a hudobného programu.",
-    "price": "na vyžiadanie",
+    "price": "na vyžiadanie | 1.000.000$",
     "icon": "sparkles"
   },
   {
     "name": "Prenájom celej jachty",
     "description": "Exkluzívny prenájom celej MARÉA pre súkromnú akciu, oslavu alebo stretnutie.",
-    "price": "na vyžiadanie",
+    "price": "na vyžiadanie | 2.500.000$",
     "icon": "yacht"
   },
   {
     "name": "Skupinové rezervácie",
     "description": "Rezervácia priestoru pre väčšie skupiny s prispôsobeným menu.",
-    "price": "na vyžiadanie",
+    "price": "na vyžiadanie | min. 20 osôb | 60.000$/osoba",
     "icon": "group"
-  },
-  {
-    "name": "Firemné eventy",
-    "description": "Priestor a servis prispôsobený firemným stretnutiam a prezentáciám.",
-    "price": "na vyžiadanie",
-    "icon": "briefcase"
   }
 ]

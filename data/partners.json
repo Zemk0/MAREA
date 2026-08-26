@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Vinewood Motors",
+    "tier": "Hlavný partner",
+    "description": "Exkluzívny predajca luxusných vozidiel — oficiálny partner pre dopravu VIP hostí MARÉA.",
+    "logo": "assets/images/partneri/vinewood-motors.svg"
+  },
+  {
+    "name": "Onyx Security Group",
+    "tier": "Hlavný partner",
+    "description": "Bezpečnostná agentúra zabezpečujúca ochranu eventov a súkromných akcií na palube.",
+    "logo": "assets/images/partneri/onyx-security.svg"
+  },
+  {
+    "name": "Los Santos Radio Wave",
+    "tier": "Partner",
+    "description": "Mediálny partner pre propagáciu eventov a live vysielanie priamo z paluby MARÉA.",
+    "logo": "assets/images/partneri/los-santos-radio.svg"
+  },
+  {
+    "name": "Pacific Charter Co.",
+    "tier": "Partner",
+    "description": "Prenájom dopravných člnov pre transfer hostí medzi pevninou a jachtou.",
+    "logo": "assets/images/partneri/pacific-charter.svg"
+  },
+  {
+    "name": "Sandy Shores Distillery",
+    "tier": "Partner",
+    "description": "Lokálny dodávateľ prémiových liehovín pre bar MARÉA.",
+    "logo": "assets/images/partneri/sandy-shores-distillery.svg"
+  }
+]

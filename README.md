@@ -6,7 +6,7 @@ Statický web pre fiktívny FiveM RP podnik **MARÉA** — luxusný letný yacht
 
 Web je čisto statický (HTML5 + CSS3 + Vanilla JavaScript). Všetok obsah, ktorý sa môže meniť (menu, ceny, kontakty, eventy, služby, galéria, texty o podniku, navigácia), sa načítava dynamicky z JSON súborov v priečinku `data/`. Nepotrebuje žiadny backend, databázu ani build proces — funguje priamo po nahratí na GitHub Pages.
 
-Web je rozdelený na **5 HTML stránok**, ktoré zdieľajú rovnakú navigáciu, pätičku, štýly aj skripty:
+Web je rozdelený na **6 HTML stránok**, ktoré zdieľajú rovnakú navigáciu, pätičku, štýly aj skripty:
 
 | Stránka | Obsahuje |
 |---|---|
@@ -14,6 +14,7 @@ Web je rozdelený na **5 HTML stránok**, ktoré zdieľajú rovnakú navigáciu,
 | `menu.html` | Menu s filtrom kategórií |
 | `galeria.html` | Fotogaléria s lightboxom |
 | `praca.html` | Otvorené pozície + odkaz na Discord |
+| `partneri.html` | Partneri MARÉA |
 | `kontakt.html` | Kontakt, vedenie a odkaz na Discord |
 
 ---
@@ -26,6 +27,7 @@ Web je rozdelený na **5 HTML stránok**, ktoré zdieľajú rovnakú navigáciu,
 ├── menu.html                → Menu
 ├── galeria.html              → Galéria
 ├── praca.html                  → Práca (otvorené pozície)
+├── partneri.html                → Partneri
 ├── kontakt.html               → Kontakt a vedenie
 ├── README.md
 │
@@ -50,7 +52,8 @@ Web je rozdelený na **5 HTML stránok**, ktoré zdieľajú rovnakú navigáciu,
     ├── contacts.json           → vedenie / kontakty
     ├── events.json              → nadchádzajúce eventy
     ├── gallery.json             → obrázky galérie
-    └── jobs.json                → otvorené pracovné pozície
+    ├── jobs.json                → otvorené pracovné pozície
+    └── partners.json            → partneri MARÉA
 ```
 
 Každá stránka pri načítaní zavolá tie isté funkcie zo `js/main.js` (napr. `renderMenu`, `renderGallery`...). Ak na danej stránke príslušný HTML kontajner neexistuje (napr. `menu.html` nemá `#gallery-grid`), funkcia sa jednoducho preskočí — nič sa nerozbije.
@@ -183,7 +186,27 @@ Otvor `data/jobs.json`:
 
 ---
 
-## 9. Ako pridať obrázky do galérie
+## 9. Ako pridať partnera (stránka Partneri)
+
+Otvor `data/partners.json`:
+
+```json
+{
+  "name": "Vinewood Motors",
+  "tier": "Hlavný partner",
+  "description": "Exkluzívny predajca luxusných vozidiel — oficiálny partner pre dopravu VIP hostí MARÉA.",
+  "logo": "assets/images/partneri/vinewood-motors.svg"
+}
+```
+
+- `logo` je cesta k logu partnera — vlož obrázok (svg/png/jpg/webp) do `assets/images/partneri/` a uveď rovnakú cestu v `logo`. Ak logo chýba alebo sa nenačíta, karta automaticky zobrazí predvolenú ikonku namiesto rozbitého obrázka.
+- `tier` musí byť presne `"Hlavný partner"` alebo `"Partner"` — hlavní partneri dostanú zvýraznený zlatý štítok, ostatní štandardný.
+- Poradie v súbore = poradie zobrazenia na stránke `partneri.html`.
+- Ak necháš pole prázdne `[]`, zobrazí sa hláška „Momentálne nemáme žiadnych partnerov na zobrazenie.“
+
+---
+
+## 10. Ako pridať obrázky do galérie
 
 1. Vlož obrázok (jpg/png/svg/webp) do `assets/images/`.
 2. Otvor `data/gallery.json` a pridaj nový záznam:
@@ -201,7 +224,7 @@ Obrázok sa automaticky zobrazí v galérii a po kliknutí sa otvorí vo fullscr
 
 ---
 
-## 10. Ako nahrať web na GitHub
+## 11. Ako nahrať web na GitHub
 
 1. Vytvor nový repozitár na GitHube (napr. `marea-yacht-bar`).
 2. V priečinku projektu spusti:
@@ -217,7 +240,7 @@ git push -u origin main
 
 ---
 
-## 11. Ako aktivovať GitHub Pages
+## 12. Ako aktivovať GitHub Pages
 
 1. Otvor repozitár na GitHube.
 2. Choď do **Settings → Pages**.

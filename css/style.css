@@ -812,7 +812,8 @@ section {
 
 /* -------------------- Services -------------------- */
 .services-grid,
-.jobs-grid {
+.jobs-grid,
+.partners-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -826,6 +827,53 @@ section {
   text-transform: uppercase;
   color: var(--turquoise-300);
   margin-bottom: 0.35rem;
+}
+
+.partner-tier {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  margin-bottom: 1.1rem;
+  color: var(--text-muted);
+  border: 1px solid rgba(217, 195, 150, 0.25);
+}
+
+.partner-tier-main {
+  color: var(--navy-900);
+  background: linear-gradient(135deg, var(--gold-400), var(--gold-500));
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.partner-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(217, 195, 150, 0.16);
+  margin-bottom: 1.3rem;
+  padding: 8px;
+}
+
+.partner-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.partner-logo-fallback {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-400);
 }
 
 .service-card {
@@ -1150,6 +1198,7 @@ section {
   color: var(--text-muted);
   margin-top: 0.6rem;
 }
+
 
 .footer-nav {
   display: flex;

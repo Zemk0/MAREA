@@ -46,6 +46,7 @@
     { label: "Eventy", href: "index.html#events" },
     { label: "Galéria", href: "galeria.html" },
     { label: "Práca", href: "praca.html" },
+    { label: "Partneri", href: "partneri.html" },
     { label: "Kontakt", href: "kontakt.html" },
   ];
 
@@ -98,6 +99,8 @@
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 7.8-8 9-4.5-1.2-8-4-8-9V6Z"/></svg>',
     gift:
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="4"/><rect x="4" y="13" width="16" height="8"/><path d="M12 9v12"/><path d="M12 9c-1.2-3-3-4-4.2-3S6.8 8.5 8 9Zm0 0c1.2-3 3-4 4.2-3s1 2.5-.2 3Z"/></svg>',
+    link:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg>',
   };
 
   function getIcon(name) {
@@ -291,6 +294,38 @@
         </div>
       </article>`
       )
+      .join("");
+
+    observeReveal();
+  }
+
+  /* -------------------- Render: Partners -------------------- */
+
+  function renderPartners(partners) {
+    const grid = qs("#partners-grid");
+    if (!grid) return;
+
+    if (!Array.isArray(partners) || !partners.length) {
+      grid.innerHTML = `<p class="state-empty">Momentálne nemáme žiadnych partnerov na zobrazenie.</p>`;
+      return;
+    }
+
+    grid.innerHTML = partners
+      .map((partner) => {
+        const isMain = partner.tier === "Hlavný partner";
+        const logoMarkup = partner.logo
+          ? `<img src="${escapeHTML(partner.logo)}" alt="${escapeHTML(partner.name)} logo" loading="lazy"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+             <div class="partner-logo-fallback" style="display:none;">${getIcon("link")}</div>`
+          : `<div class="partner-logo-fallback">${getIcon("link")}</div>`;
+        return `
+      <article class="card service-card reveal">
+        <span class="partner-tier${isMain ? " partner-tier-main" : ""}">${escapeHTML(partner.tier)}</span>
+        <div class="partner-logo">${logoMarkup}</div>
+        <h3 class="service-name">${escapeHTML(partner.name)}</h3>
+        <p class="service-desc">${escapeHTML(partner.description)}</p>
+      </article>`;
+      })
       .join("");
 
     observeReveal();
@@ -613,6 +648,7 @@
       loadMenu().then(renderMenu),
       loadServices().then(renderServices),
       loadJobs().then(renderJobs),
+      loadPartners().then(renderPartners),
       loadEvents().then(renderEvents),
       loadGallery().then(renderGallery),
       loadContacts().then(renderContacts),
