@@ -262,12 +262,14 @@
     grid.innerHTML = services
       .map(
         (service, index) => `
-      <article class="card service-card reveal" data-index="${index}" tabindex="0" role="button"
-                aria-label="Zobraziť podrobnosti: ${escapeHTML(service.name)}">
+      <article class="card service-card reveal" data-index="${index}">
         <div class="service-icon">${getIcon(service.icon)}</div>
         <h3 class="service-name">${escapeHTML(service.name)}</h3>
         <p class="service-desc">${escapeHTML(service.description)}</p>
         <div class="service-price">${escapeHTML(service.price)}</div>
+        <button type="button" class="card-more" aria-label="Zistiť viac o ${escapeHTML(service.name)}">
+          Zistiť viac <span class="card-more-arrow" aria-hidden="true">→</span>
+        </button>
       </article>`
       )
       .join("");
@@ -433,8 +435,7 @@
     grid.innerHTML = events
       .map(
         (event, index) => `
-      <article class="card event-card reveal" data-index="${index}" tabindex="0" role="button"
-                aria-label="Zobraziť podrobnosti: ${escapeHTML(event.name)}">
+      <article class="card event-card reveal" data-index="${index}">
         <div class="event-media">
           <img src="${escapeHTML(event.image)}" alt="${escapeHTML(event.name)}" loading="lazy"
                onerror="this.closest('.event-media').style.background='linear-gradient(150deg,#0a2540,#123249)'; this.remove();">
@@ -443,6 +444,9 @@
         <div class="event-body">
           <h3 class="event-name">${escapeHTML(event.name)}</h3>
           <p class="event-desc">${escapeHTML(event.description)}</p>
+          <button type="button" class="card-more" aria-label="Zistiť viac o ${escapeHTML(event.name)}">
+            Zistiť viac <span class="card-more-arrow" aria-hidden="true">→</span>
+          </button>
         </div>
       </article>`
       )

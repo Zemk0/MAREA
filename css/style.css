@@ -1121,6 +1121,31 @@ section {
   cursor: pointer;
 }
 
+.card-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--gold-400);
+  transition: color var(--transition-fast);
+}
+
+.card:hover .card-more {
+  color: var(--gold-300);
+}
+
+.card-more-arrow {
+  display: inline-block;
+  transition: transform var(--transition-fast);
+}
+
+.card:hover .card-more-arrow {
+  transform: translateX(4px);
+}
+
 .info-modal {
   position: fixed;
   inset: 0;
