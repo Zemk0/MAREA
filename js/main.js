@@ -427,7 +427,7 @@
     if (!grid) return;
 
     if (!Array.isArray(events) || !events.length) {
-      grid.innerHTML = `<p class="events-empty">Momentálne nemáme naplánované žiadne eventy.</p>`;
+      grid.innerHTML = `<p class="events-empty">Momentálne je na palube pokoj — nové eventy sa pripravujú. Sledujte nás, aby ste nezmeškali ďalšiu vlnu zábavy na MARÉA.</p>`;
       return;
     }
 

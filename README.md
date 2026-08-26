@@ -163,7 +163,7 @@ Otvor `data/events.json`:
 ```
 
 - `date` zadávaj v tvare `RRRR-MM-DD` — na webe sa automaticky preformátuje na slovenský dátum (napr. „5. septembra 2026“).
-- Ak v súbore necháš prázdne pole `[]`, web automaticky zobrazí hlášku „Momentálne nemáme naplánované žiadne eventy.“
+- Ak v súbore necháš prázdne pole `[]`, web automaticky zobrazí hlášku „Momentálne je na palube pokoj — nové eventy sa pripravujú. Sledujte nás, aby ste nezmeškali ďalšiu vlnu zábavy na MARÉA.“
 
 ---
 
