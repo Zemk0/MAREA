@@ -25,6 +25,15 @@
     --space-xl: 3.4rem;
   }
 
+  .calc-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .calc-table-wrap,
+  .calc-cart {
+    max-height: 320px;
+  }
+
   .nav-links {
     position: fixed;
     top: 0;

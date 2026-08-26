@@ -864,7 +864,7 @@
       .filter(({ item }) => calcCategory === "all" || item.category === calcCategory);
 
     if (!entries.length) {
-      picker.innerHTML = `<p class="menu-empty">V tejto kategórii momentálne nemáme žiadne položky.</p>`;
+      picker.innerHTML = `<tr><td colspan="2" class="menu-empty">V tejto kategórii momentálne nemáme žiadne položky.</td></tr>`;
       return;
     }
 
@@ -872,11 +872,14 @@
       .map(({ item, index }) => {
         const qty = calcCart[index] || 0;
         return `
-      <button type="button" class="calc-chip${qty > 0 ? " is-added" : ""}" data-index="${index}">
-        <span class="calc-chip-name">${escapeHTML(item.name)}</span>
-        <span class="calc-chip-price">${formatPrice(calcUnitPrice(item))}</span>
-        ${qty > 0 ? `<span class="calc-chip-badge">${qty}</span>` : ""}
-      </button>`;
+      <tr class="calc-table-row${qty > 0 ? " is-added" : ""}" data-index="${index}" tabindex="0" role="button"
+          aria-label="Pridať ${escapeHTML(item.name)} do košíka">
+        <td class="calc-table-name">${escapeHTML(item.name)}</td>
+        <td class="calc-table-price">
+          ${formatPrice(calcUnitPrice(item))}
+          ${qty > 0 ? `<span class="calc-chip-badge">${qty}</span>` : ""}
+        </td>
+      </tr>`;
       })
       .join("");
   }
@@ -899,13 +902,15 @@
         return `
       <div class="calc-cart-row" data-index="${index}">
         <div class="calc-cart-name">${escapeHTML(item.name)}</div>
-        <div class="calc-cart-qty">
-          <button type="button" class="calc-qty-btn" data-action="dec" aria-label="Ubrať ${escapeHTML(item.name)}">−</button>
-          <span class="calc-qty-value">${qty}</span>
-          <button type="button" class="calc-qty-btn" data-action="inc" aria-label="Pridať ${escapeHTML(item.name)}">+</button>
+        <div class="calc-cart-controls">
+          <div class="calc-cart-qty">
+            <button type="button" class="calc-qty-btn" data-action="dec" aria-label="Ubrať ${escapeHTML(item.name)}">−</button>
+            <span class="calc-qty-value">${qty}</span>
+            <button type="button" class="calc-qty-btn" data-action="inc" aria-label="Pridať ${escapeHTML(item.name)}">+</button>
+          </div>
+          <div class="calc-cart-subtotal">${formatPrice(qty * calcUnitPrice(item))}</div>
+          <button type="button" class="calc-cart-remove" data-action="remove" aria-label="Odstrániť ${escapeHTML(item.name)} z košíka">✕</button>
         </div>
-        <div class="calc-cart-subtotal">${formatPrice(qty * calcUnitPrice(item))}</div>
-        <button type="button" class="calc-cart-remove" data-action="remove" aria-label="Odstrániť ${escapeHTML(item.name)} z košíka">✕</button>
       </div>`;
       })
       .join("");
@@ -975,9 +980,19 @@
     if (!picker.dataset.bound) {
       picker.dataset.bound = "true";
       picker.addEventListener("click", (event) => {
-        const chip = event.target.closest(".calc-chip");
-        if (!chip) return;
-        const index = Number(chip.dataset.index);
+        const row = event.target.closest(".calc-table-row");
+        if (!row) return;
+        const index = Number(row.dataset.index);
+        calcCart[index] = (calcCart[index] || 0) + 1;
+        updateCalcTotals();
+      });
+
+      picker.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        const row = event.target.closest(".calc-table-row");
+        if (!row) return;
+        event.preventDefault();
+        const index = Number(row.dataset.index);
         calcCart[index] = (calcCart[index] || 0) + 1;
         updateCalcTotals();
       });

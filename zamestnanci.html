@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css?v=11">
-  <link rel="stylesheet" href="css/responsive.css?v=2">
+  <link rel="stylesheet" href="css/style.css?v=12">
+  <link rel="stylesheet" href="css/responsive.css?v=3">
 </head>
 <body>
 
@@ -91,19 +91,35 @@
 
           <div class="menu-filters" id="calc-filters" role="tablist" aria-label="Filter kategórií"></div>
 
-          <h3 class="calc-subheading">Vyber položky</h3>
-          <div class="calc-picker" id="calc-picker">
-            <p class="state-empty">Načítavam menu…</p>
-          </div>
+          <div class="calc-layout">
+            <div class="calc-menu-panel">
+              <h3 class="calc-subheading">Vyber položky</h3>
+              <div class="calc-table-wrap">
+                <table class="calc-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Položka</th>
+                      <th scope="col">Cena</th>
+                    </tr>
+                  </thead>
+                  <tbody id="calc-picker">
+                    <tr><td colspan="2" class="state-empty">Načítavam menu…</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
 
-          <h3 class="calc-subheading">Košík</h3>
-          <div class="calc-cart" id="calc-cart">
-            <p class="calc-cart-empty">Košík je prázdny — klikni na položku vyššie a pridaj ju sem.</p>
-          </div>
+            <div class="calc-cart-panel">
+              <h3 class="calc-subheading">Košík</h3>
+              <div class="calc-cart" id="calc-cart">
+                <p class="calc-cart-empty">Košík je prázdny — klikni na položku vľavo a pridaj ju sem.</p>
+              </div>
 
-          <div class="calc-summary">
-            <button type="button" class="btn btn-outline" id="calc-reset">Vynulovať košík</button>
-            <div class="calc-total">Spolu: <span id="calc-total-value">0$</span></div>
+              <div class="calc-summary">
+                <button type="button" class="btn btn-outline" id="calc-reset">Vynulovať košík</button>
+                <div class="calc-total">Spolu: <span id="calc-total-value">0$</span></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -176,6 +192,6 @@
   </button>
 
   <script src="js/loader.js?v=6"></script>
-  <script src="js/main.js?v=11"></script>
+  <script src="js/main.js?v=12"></script>
 </body>
 </html>

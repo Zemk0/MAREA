@@ -1541,7 +1541,7 @@ section {
 }
 
 .calc-subheading {
-  text-align: center;
+  text-align: left;
   font-size: 0.78rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1549,47 +1549,77 @@ section {
   margin-bottom: 1rem;
 }
 
-.calc-picker {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.6rem;
-  max-width: 760px;
-  margin: 0 auto 2.2rem;
+.calc-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 1.8rem;
+  max-width: 960px;
+  margin-inline: auto;
+  align-items: start;
 }
 
-.calc-chip {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.25rem;
-  padding: 0.7rem 1.1rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(217, 195, 150, 0.2);
-  background: rgba(255, 255, 255, 0.03);
-  transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+.calc-table-wrap {
+  max-height: 420px;
+  overflow-y: auto;
+  border: 1px solid rgba(217, 195, 150, 0.16);
+  border-radius: var(--radius-md);
 }
 
-.calc-chip:hover {
-  border-color: var(--gold-400);
-  transform: translateY(-2px);
+.calc-table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.calc-chip.is-added {
-  border-color: var(--gold-400);
+.calc-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--navy-900);
+  text-align: left;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-400);
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(217, 195, 150, 0.2);
+}
+
+.calc-table thead th:last-child {
+  text-align: right;
+}
+
+.calc-table-row {
+  cursor: pointer;
+  border-bottom: 1px solid rgba(217, 195, 150, 0.08);
+  transition: background var(--transition-fast);
+}
+
+.calc-table-row:last-child {
+  border-bottom: none;
+}
+
+.calc-table-row:hover,
+.calc-table-row:focus-visible {
+  background: rgba(217, 195, 150, 0.08);
+}
+
+.calc-table-row.is-added {
   background: rgba(217, 195, 150, 0.12);
 }
 
-.calc-chip-name {
+.calc-table-name,
+.calc-table-price {
+  padding: 0.7rem 1rem;
   font-size: 0.86rem;
-  color: var(--white);
+  color: var(--text-primary);
 }
 
-.calc-chip-price {
-  font-size: 0.78rem;
-  color: var(--gold-300);
+.calc-table-price {
+  position: relative;
+  text-align: right;
+  white-space: nowrap;
   font-family: var(--font-display);
+  color: var(--gold-300);
 }
 
 .calc-chip-badge {
@@ -1612,9 +1642,10 @@ section {
 .calc-cart {
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
-  max-width: 720px;
-  margin-inline: auto;
+  gap: 0.6rem;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 0.3rem;
 }
 
 .calc-cart-empty {
@@ -1627,26 +1658,31 @@ section {
 
 .calc-cart-row {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.9rem 1.2rem;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 0.8rem 1rem;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(217, 195, 150, 0.14);
   border-radius: var(--radius-md);
-  flex-wrap: wrap;
+  flex-shrink: 0;
 }
 
 .calc-cart-name {
-  flex: 1 1 140px;
   color: var(--white);
-  font-size: 0.92rem;
+  font-size: 0.88rem;
+}
+
+.calc-cart-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
 }
 
 .calc-cart-qty {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
 }
 
 .calc-qty-btn {
@@ -1704,9 +1740,8 @@ section {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  max-width: 720px;
-  margin: 1.8rem auto 0;
-  padding-top: 1.4rem;
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
   border-top: 1px solid rgba(217, 195, 150, 0.16);
   flex-wrap: wrap;
 }
