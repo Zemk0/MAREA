@@ -876,7 +876,6 @@
               aria-label="Pridať ${escapeHTML(item.name)} do košíka">
         <span class="calc-tile-name">${escapeHTML(item.name)}</span>
         <span class="calc-tile-price">${formatPrice(calcUnitPrice(item))}</span>
-        ${qty > 0 ? `<span class="calc-chip-badge">${qty}</span>` : ""}
       </button>`;
       })
       .join("");

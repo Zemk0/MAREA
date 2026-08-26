@@ -1617,23 +1617,6 @@ section {
   font-family: var(--font-display);
 }
 
-.calc-chip-badge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  min-width: 20px;
-  height: 20px;
-  padding: 0 5px;
-  border-radius: 999px;
-  background: var(--gold-400);
-  color: var(--navy-900);
-  font-size: 0.7rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .calc-cart {
   display: flex;
   flex-direction: column;
