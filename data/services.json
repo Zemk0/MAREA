@@ -2,42 +2,49 @@
   {
     "name": "Vstup na MARÉA",
     "description": "Základný vstup na palubu s prístupom do hlavného baru a oddychových zón.",
+    "details": "Základný vstup ťa privedie priamo na palubu MARÉA, kde máš prístup do hlavného baru, oddychových zón a k štandardnému menu. Ideálne pre bežnú návštevu počas dňa aj večera.",
     "price": "10.000$",
     "icon": "anchor"
   },
   {
     "name": "Vstup Plus",
     "description": "Rozšírený vstup, uvítací drink a daľsie výhody.",
+    "details": "Rozšírený vstup zahŕňa uvítací drink na privítanie, prioritné odbavenie pri vstupe a prístup do vybraných rozšírených zón paluby.",
     "price": "30.000$",
     "icon": "crown"
   },
   {
     "name": "VIP vstup",
     "description": "Prioritný vstup, vyhradená zóna, uvítací drink a osobný servis.",
+    "details": "VIP vstup ti otvára dvere do vyhradenej zóny s vlastnou obsluhou, uvítacím drinkom a osobným servisom počas celej návštevy. Ideálne pre oslavy a špeciálne príležitosti.",
     "price": "70.000$",
     "icon": "star"
   },
   {
     "name": "Black Card VIP Membership",
     "description": "Exkluzívne výhody pre členov, vrátane súkromných eventov a špeciálnych ponúk.",
+    "details": "Členstvo Black Card prináša celoročné výhody — prioritné rezervácie, zľavy na súkromné eventy, pozvánky na uzavreté akcie a osobného kontaktného manažéra.",
     "price": "1.500.000$ / mesiac",
     "icon": "diamond"
   },
   {
     "name": "Súkromný event",
     "description": "Vyhradená časť jachty pre váš event vrátane obsluhy a hudobného programu.",
+    "details": "Vyhradíme ti časť jachty presne podľa tvojich predstáv — vrátane vlastnej obsluhy, hudobného programu a úpravy priestoru. Vhodné pre menšie oslavy a stretnutia.",
     "price": "na vyžiadanie | 1.000.000$",
     "icon": "sparkles"
   },
   {
     "name": "Prenájom celej jachty",
     "description": "Exkluzívny prenájom celej MARÉA pre súkromnú akciu, oslavu alebo stretnutie.",
+    "details": "Celá MARÉA je tvoja — od baru cez palubu až po VIP zóny. Zahŕňa kompletný personál, vlastný hudobný program a možnosť prispôsobiť menu podľa priania.",
     "price": "na vyžiadanie | 2.500.000$",
     "icon": "yacht"
   },
   {
     "name": "Skupinové rezervácie",
     "description": "Rezervácia priestoru pre väčšie skupiny s prispôsobeným menu.",
+    "details": "Vyhradený priestor pre väčšie skupiny s upraveným menu a možnosťou predobjednávky drinkov, aby si si užil večer bez čakania.",
     "price": "na vyžiadanie | min. 20 osôb | 60.000$/osoba",
     "icon": "group"
   }

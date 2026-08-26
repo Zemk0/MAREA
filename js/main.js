@@ -246,6 +246,8 @@
 
   /* -------------------- Render: Services -------------------- */
 
+  let servicesCache = [];
+
   function renderServices(services) {
     const grid = qs("#services-grid");
     if (!grid) return;
@@ -255,10 +257,13 @@
       return;
     }
 
+    servicesCache = services;
+
     grid.innerHTML = services
       .map(
-        (service) => `
-      <article class="card service-card reveal">
+        (service, index) => `
+      <article class="card service-card reveal" data-index="${index}" tabindex="0" role="button"
+                aria-label="Zobraziť podrobnosti: ${escapeHTML(service.name)}">
         <div class="service-icon">${getIcon(service.icon)}</div>
         <h3 class="service-name">${escapeHTML(service.name)}</h3>
         <p class="service-desc">${escapeHTML(service.description)}</p>
@@ -268,6 +273,39 @@
       .join("");
 
     observeReveal();
+    setupServiceModal();
+  }
+
+  function openServiceModal(index) {
+    const service = servicesCache[index];
+    if (!service) return;
+    openInfoModal({
+      eyebrow: "Služba",
+      title: service.name,
+      meta: service.price,
+      mediaHTML: `<div class="info-modal-icon">${getIcon(service.icon)}</div>`,
+      body: service.details || service.description,
+    });
+  }
+
+  function setupServiceModal() {
+    const grid = qs("#services-grid");
+    if (!grid || grid.dataset.modalBound) return;
+    grid.dataset.modalBound = "true";
+
+    grid.addEventListener("click", (event) => {
+      const card = event.target.closest(".service-card");
+      if (!card) return;
+      openServiceModal(Number(card.dataset.index));
+    });
+
+    grid.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      const card = event.target.closest(".service-card");
+      if (!card) return;
+      event.preventDefault();
+      openServiceModal(Number(card.dataset.index));
+    });
   }
 
   /* -------------------- Render: Jobs -------------------- */
@@ -340,6 +378,47 @@
     return date.toLocaleDateString("sk-SK", { day: "numeric", month: "long", year: "numeric" });
   }
 
+  /* -------------------- Info modal (Services / Events) -------------------- */
+
+  function openInfoModal({ eyebrow, title, meta, mediaHTML, body }) {
+    const modal = qs("#info-modal");
+    if (!modal) return;
+
+    qs("#info-modal-eyebrow", modal).textContent = eyebrow || "";
+    qs("#info-modal-title", modal).textContent = title || "";
+    qs("#info-modal-meta", modal).textContent = meta || "";
+    qs("#info-modal-desc", modal).textContent = body || "";
+    qs("#info-modal-media", modal).innerHTML = mediaHTML || "";
+
+    modal.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeInfoModal() {
+    const modal = qs("#info-modal");
+    if (!modal) return;
+    modal.classList.remove("is-open");
+    document.body.style.overflow = "";
+  }
+
+  function setupInfoModal() {
+    const modal = qs("#info-modal");
+    if (!modal || modal.dataset.bound) return;
+    modal.dataset.bound = "true";
+
+    qs("#info-modal-close", modal).addEventListener("click", closeInfoModal);
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) closeInfoModal();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && modal.classList.contains("is-open")) closeInfoModal();
+    });
+  }
+
+  let eventsCache = [];
+
   function renderEvents(events) {
     const grid = qs("#events-grid");
     if (!grid) return;
@@ -349,10 +428,13 @@
       return;
     }
 
+    eventsCache = events;
+
     grid.innerHTML = events
       .map(
-        (event) => `
-      <article class="card event-card reveal">
+        (event, index) => `
+      <article class="card event-card reveal" data-index="${index}" tabindex="0" role="button"
+                aria-label="Zobraziť podrobnosti: ${escapeHTML(event.name)}">
         <div class="event-media">
           <img src="${escapeHTML(event.image)}" alt="${escapeHTML(event.name)}" loading="lazy"
                onerror="this.closest('.event-media').style.background='linear-gradient(150deg,#0a2540,#123249)'; this.remove();">
@@ -367,6 +449,40 @@
       .join("");
 
     observeReveal();
+    setupEventModal();
+  }
+
+  function openEventModal(index) {
+    const event = eventsCache[index];
+    if (!event) return;
+    openInfoModal({
+      eyebrow: "Event",
+      title: event.name,
+      meta: formatDate(event.date),
+      mediaHTML: `<img src="${escapeHTML(event.image)}" alt="${escapeHTML(event.name)}"
+                       onerror="this.remove();">`,
+      body: event.details || event.description,
+    });
+  }
+
+  function setupEventModal() {
+    const grid = qs("#events-grid");
+    if (!grid || grid.dataset.modalBound) return;
+    grid.dataset.modalBound = "true";
+
+    grid.addEventListener("click", (event) => {
+      const card = event.target.closest(".event-card");
+      if (!card) return;
+      openEventModal(Number(card.dataset.index));
+    });
+
+    grid.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      const card = event.target.closest(".event-card");
+      if (!card) return;
+      event.preventDefault();
+      openEventModal(Number(card.dataset.index));
+    });
   }
 
   /* -------------------- Render: Gallery + Lightbox -------------------- */
@@ -641,6 +757,7 @@
     setupNavbar();
     setupMobileMenu();
     setupBackToTop();
+    setupInfoModal();
     setFooterYear();
 
     const results = await Promise.allSettled([
