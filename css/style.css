@@ -1621,7 +1621,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  max-height: 420px;
+  max-height: 520px;
   overflow-y: auto;
   padding-right: 0.3rem;
 }
