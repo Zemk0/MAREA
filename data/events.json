@@ -3,20 +3,20 @@
     "name": "GRAND OPENING SUNSET PARTY",
     "date": "2026-09-05",
     "description": "Veľké otvorenie a odštartovanie nového podniku.",
-    "details": "Prídte s nami osláviť veľké otvorenie MARÉA s live DJ setom. Užite si západ slnka na palube, špeciálne drinky a prvé ochutnávky z nášho menu. Vstupné za polovičnú cenu.",
+    "details": "Prídte s nami osláviť veľké otvorenie MARÉA s live DJ setom. Užite si západ slnka na pláži, špeciálne drinky a prvé ochutnávky z nášho menu. Vstupné za polovičnú cenu.",
     "image": "assets/images/events/event-sunset.svg"
   },
   {
     "name": "MARÉA White Night",
     "date": "2026-09-19",
     "description": "Tematická biela noc s live hudbou, šampanským barom a špeciálnym menu.",
-    "details": "Tematický večer v bielom — príďte oblečení v bielej farbe a užite si šampanský bar, live hudbu a špeciálne biele menu na palube MARÉA.",
+    "details": "Tematický večer v bielom — príďte oblečení v bielej farbe a užite si šampanský bar, live hudbu a špeciálne biele menu na pláži MARÉA.",
     "image": "assets/images/events/event-whitenight.svg"
   },
   {
     "name": "Deep Ocean Beats",
     "date": "2026-10-03",
-    "description": "Nočný event s deep house DJ lineupom a svetelnou show na palube.",
+    "description": "Nočný event s deep house DJ lineupom a svetelnou show na pláži.",
     "details": "Nočný event s deep house DJ lineupom, svetelnou show a predĺženým barom do skorých ranných hodín. Vstup odporúčame rezervovať vopred.",
     "image": "assets/images/events/event-deepocean.svg"
   }

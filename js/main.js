@@ -76,8 +76,12 @@
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 2.8 14.7 9l6.8.6-5.1 4.5 1.6 6.7L12 17.6 5.9 20.8l1.6-6.7-5.1-4.5L9.3 9Z"/></svg>',
     sparkles:
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M11 3 12.6 8 18 9.5 12.6 11 11 16 9.4 11 4 9.5 9.4 8Z"/><path d="M18.5 15.5 19.3 18l2.5.8-2.5.8-.8 2.5-.8-2.5-2.5-.8 2.5-.8Z"/></svg>',
-    yacht:
-      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 15 2 20h20l-2-5Z"/><path d="M6 15V5h1l9 6.5"/><path d="M11 5V2.5"/><path d="M2 20c1.5 1.3 3 1.3 4.5 0s3-1.3 4.5 0 3 1.3 4.5 0 3-1.3 4.5 0"/></svg>',
+    palm:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 21c0-4 .5-7 1-10"/><path d="M13 11C9 9 6 9.5 4 11.5c3.5 1 7 .5 9-.5Z"/><path d="M13 11C11 7.5 8 6 5 6.5 7 9 10 10.5 13 11Z"/><path d="M13 11c2-4 5-5 8-4-2 2.5-5 3.8-8 4Z"/><path d="M13 11c4-1.7 7-1 9 1-3.5.8-7 0-9-1Z"/></svg>',
+    umbrella:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 11v9a2 2 0 0 1-2 2"/><path d="M2 11a10 10 0 0 1 20 0Z"/><path d="M12 3v2"/></svg>',
+    sun:
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>',
     group:
       '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.4"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><path d="M14.5 14.7c2.6.3 4.5 2.3 4.5 5.3"/></svg>',
     briefcase:
@@ -454,7 +458,7 @@
     if (!grid) return;
 
     if (!Array.isArray(events) || !events.length) {
-      grid.innerHTML = `<p class="events-empty">Momentálne je na palube pokoj — nové eventy sa pripravujú. Sledujte nás, aby ste nezmeškali ďalšiu vlnu zábavy na MARÉA.</p>`;
+      grid.innerHTML = `<p class="events-empty">Momentálne je na pláži pokoj — nové eventy sa pripravujú. Sledujte nás, aby ste nezmeškali ďalšiu vlnu zábavy na MARÉA.</p>`;
       return;
     }
 

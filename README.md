@@ -1,8 +1,8 @@
-# MARÉA — Yacht Bar
+# MARÉA — Beach Bar
 
-Statický web pre fiktívny FiveM RP podnik **MARÉA** — luxusný letný yacht bar pri pobreží Los Santos.
+Statický web pre fiktívny FiveM RP podnik **MARÉA** — luxusný letný beach bar na súkromnej pláži ostrova Cayo Perico.
 
-> „Where the city meets the sea.“
+> „Where the sand meets the sea.“
 
 Web je čisto statický (HTML5 + CSS3 + Vanilla JavaScript). Všetok obsah, ktorý sa môže meniť (menu, ceny, kontakty, eventy, služby, galéria, texty o podniku, navigácia), sa načítava dynamicky z JSON súborov v priečinku `data/`. Nepotrebuje žiadny backend, databázu ani build proces — funguje priamo po nahratí na GitHub Pages.
 
@@ -90,7 +90,7 @@ Otvor `data/business.json`. Nájdeš tam:
 Stačí zmeniť text v úvodzovkách a uložiť súbor — zmena sa prejaví po obnovení stránky.
 
 ```json
-"slogan": "Where the city meets the sea."
+"slogan": "Where the sand meets the sea."
 ```
 
 ---
@@ -131,7 +131,7 @@ Otvor `data/services.json`. Každá služba má tvar:
 ```
 
 - `price` je text (môžeš napísať napr. `"na vyžiadanie"` alebo `"od 150$"`).
-- `icon` môže byť jedna z hodnôt: `anchor`, `star`, `sparkles`, `yacht`, `group`, `briefcase`, `plus`, `crown`, `cocktail`, `music`, `diamond`, `calendar`, `shield`, `gift`, `wave` (ak zadáš iný/neznámy názov, zobrazí sa predvolená ikonka vlny).
+- `icon` môže byť jedna z hodnôt: `anchor`, `star`, `sparkles`, `palm`, `umbrella`, `sun`, `group`, `briefcase`, `plus`, `crown`, `cocktail`, `music`, `diamond`, `calendar`, `shield`, `gift`, `wave` (ak zadáš iný/neznámy názov, zobrazí sa predvolená ikonka vlny).
 - Novú službu pridáš pridaním ďalšieho objektu do poľa, existujúcu odstrániš vymazaním jej bloku.
 
 ---
@@ -168,7 +168,7 @@ Otvor `data/events.json`:
 ```
 
 - `date` zadávaj v tvare `RRRR-MM-DD` — na webe sa automaticky preformátuje na slovenský dátum (napr. „5. septembra 2026“).
-- Ak v súbore necháš prázdne pole `[]`, web automaticky zobrazí hlášku „Momentálne je na palube pokoj — nové eventy sa pripravujú. Sledujte nás, aby ste nezmeškali ďalšiu vlnu zábavy na MARÉA.“
+- Ak v súbore necháš prázdne pole `[]`, web automaticky zobrazí hlášku „Momentálne je na pláži pokoj — nové eventy sa pripravujú. Sledujte nás, aby ste nezmeškali ďalšiu vlnu zábavy na MARÉA.“
 
 ---
 
@@ -185,7 +185,7 @@ Otvor `data/jobs.json`:
 }
 ```
 
-- `icon` môže byť jedna z hodnôt: `anchor`, `star`, `sparkles`, `yacht`, `group`, `briefcase`, `plus`, `crown`, `cocktail`, `music`, `diamond`, `calendar`, `shield`, `gift`, `wave` (rovnaká sada ako pri službách).
+- `icon` môže byť jedna z hodnôt: `anchor`, `star`, `sparkles`, `palm`, `umbrella`, `sun`, `group`, `briefcase`, `plus`, `crown`, `cocktail`, `music`, `diamond`, `calendar`, `shield`, `gift`, `wave` (rovnaká sada ako pri službách).
 - Ak necháš pole prázdne `[]`, stránka `praca.html` zobrazí hlášku „Momentálne nemáme otvorené žiadne pozície.“
 - Uchádzači sa hlásia cez tlačidlo „Napísať cez Discord“ nad zoznamom pozícií — odkaz sa berie z `discord.url` v `data/business.json` (pozri bod 3).
 
@@ -258,13 +258,13 @@ Obrázok sa automaticky zobrazí v galérii a po kliknutí sa otvorí vo fullscr
 
 ## 12. Ako nahrať web na GitHub
 
-1. Vytvor nový repozitár na GitHube (napr. `marea-yacht-bar`).
+1. Vytvor nový repozitár na GitHube (napr. `marea-beach-bar`).
 2. V priečinku projektu spusti:
 
 ```bash
 git init
 git add .
-git commit -m "Initial commit: MARÉA yacht bar website"
+git commit -m "Initial commit: MARÉA beach bar website"
 git branch -M main
 git remote add origin https://github.com/<tvoj-username>/<nazov-repo>.git
 git push -u origin main

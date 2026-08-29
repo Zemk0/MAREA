@@ -2,23 +2,27 @@
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#050f1c"/>
-      <stop offset="55%" stop-color="#0d2036"/>
-      <stop offset="100%" stop-color="#123249"/>
+      <stop offset="55%" stop-color="#123249"/>
+      <stop offset="100%" stop-color="#2a5f74"/>
     </linearGradient>
     <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#f5d18b"/>
-      <stop offset="100%" stop-color="#f5d18b" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#d7ecec"/>
+      <stop offset="100%" stop-color="#d7ecec" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0e3a52"/>
+      <stop offset="0%" stop-color="#145a6c"/>
       <stop offset="100%" stop-color="#082234"/>
+    </linearGradient>
+    <linearGradient id="sandGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cbb488"/>
+      <stop offset="100%" stop-color="#9c825a"/>
     </linearGradient>
   </defs>
   <rect width="1600" height="900" fill="url(#sky)"/>
-  
-  <rect y="558" width="1600" height="342" fill="url(#seaGrad)"/>
-  
+  <circle cx="1152" cy="324" r="126" fill="url(#sunGrad)"/>
+  <rect y="558" width="1600" height="232" fill="url(#seaGrad)"/>
   <g opacity="0.5"><path d="M0,594 Q80,570 160,594 Q240,618 320,594 Q400,570 480,594 Q560,618 640,594 Q720,570 800,594 Q880,618 960,594 Q1040,570 1120,594 Q1200,618 1280,594 Q1360,570 1440,594 Q1520,618 1600,594 Q1680,570 1760,594 L1600,794 L0,794 Z" fill="#ffffff" opacity="0.12"/></g>
   <g opacity="0.4"><path d="M0,666 Q80,636 160,666 Q240,696 320,666 Q400,636 480,666 Q560,696 640,666 Q720,636 800,666 Q880,696 960,666 Q1040,636 1120,666 Q1200,696 1280,666 Q1360,636 1440,666 Q1520,696 1600,666 Q1680,636 1760,666 L1600,866 L0,866 Z" fill="#ffffff" opacity="0.1"/></g>
   <g opacity="0.3"><path d="M0,756 Q80,738 160,756 Q240,774 320,756 Q400,738 480,756 Q560,774 640,756 Q720,738 800,756 Q880,774 960,756 Q1040,738 1120,756 Q1200,774 1280,756 Q1360,738 1440,756 Q1520,774 1600,756 Q1680,738 1760,756 L1600,956 L0,956 Z" fill="#ffffff" opacity="0.08"/></g>
+  <rect y="790" width="1600" height="110" fill="url(#sandGrad)"/>
 </svg>

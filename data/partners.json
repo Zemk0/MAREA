@@ -8,19 +8,19 @@
   {
     "name": "Onyx Security Group",
     "tier": "Hlavný partner",
-    "description": "Bezpečnostná agentúra zabezpečujúca ochranu eventov a súkromných akcií na palube.",
+    "description": "Bezpečnostná agentúra zabezpečujúca ochranu eventov a súkromných akcií na pláži.",
     "logo": "assets/images/partneri/onyx-security.svg"
   },
   {
-    "name": "Los Santos Radio Wave",
+    "name": "Perico Radio Wave",
     "tier": "Partner",
-    "description": "Mediálny partner pre propagáciu eventov a live vysielanie priamo z paluby MARÉA.",
+    "description": "Mediálny partner pre propagáciu eventov a live vysielanie priamo z pláže MARÉA.",
     "logo": "assets/images/partneri/los-santos-radio.svg"
   },
   {
     "name": "Pacific Charter Co.",
     "tier": "Partner",
-    "description": "Prenájom dopravných člnov pre transfer hostí medzi pevninou a jachtou.",
+    "description": "Prenájom dopravných člnov pre transfer hostí medzi pevninou a ostrovom Cayo Perico.",
     "logo": "assets/images/partneri/pacific-charter.svg"
   },
   {

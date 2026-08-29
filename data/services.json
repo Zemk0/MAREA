@@ -1,15 +1,15 @@
 [
   {
     "name": "Vstup na MARÉA",
-    "description": "Základný vstup na palubu s prístupom do hlavného baru a oddychových zón.",
-    "details": "Základný vstup ťa privedie priamo na palubu MARÉA, kde máš prístup do hlavného baru, oddychových zón a k štandardnému menu. Ideálne pre bežnú návštevu počas dňa aj večera.",
+    "description": "Základný vstup na pláž s prístupom do hlavného baru a oddychových zón.",
+    "details": "Základný vstup ťa privedie priamo na pláž MARÉA, kde máš prístup do hlavného baru, oddychových zón pod palmami a k štandardnému menu. Ideálne pre bežnú návštevu počas dňa aj večera.",
     "price": "10.000$",
     "icon": "anchor"
   },
   {
     "name": "Vstup Plus",
     "description": "Rozšírený vstup, uvítací drink a daľsie výhody.",
-    "details": "Rozšírený vstup zahŕňa uvítací drink na privítanie, prioritné odbavenie pri vstupe a prístup do vybraných rozšírených zón paluby.",
+    "details": "Rozšírený vstup zahŕňa uvítací drink na privítanie, prioritné odbavenie pri vstupe a prístup do vybraných rozšírených zón pláže.",
     "price": "30.000$",
     "icon": "crown"
   },
@@ -29,17 +29,17 @@
   },
   {
     "name": "Súkromný event",
-    "description": "Vyhradená časť jachty pre váš event vrátane obsluhy a hudobného programu.",
-    "details": "Vyhradíme ti časť jachty presne podľa tvojich predstáv — vrátane vlastnej obsluhy, hudobného programu a úpravy priestoru. Vhodné pre menšie oslavy a stretnutia.",
+    "description": "Vyhradená časť pláže pre váš event vrátane obsluhy a hudobného programu.",
+    "details": "Vyhradíme ti časť pláže presne podľa tvojich predstáv — vrátane vlastnej obsluhy, hudobného programu a úpravy priestoru. Vhodné pre menšie oslavy a stretnutia.",
     "price": "na vyžiadanie | 1.000.000$/hodina",
     "icon": "sparkles"
   },
   {
-    "name": "Prenájom celej jachty",
+    "name": "Prenájom celého baru",
     "description": "Exkluzívny prenájom celej MARÉA pre súkromnú akciu, oslavu alebo stretnutie.",
-    "details": "Celá MARÉA je tvoja — od baru cez palubu až po VIP zóny. Zahŕňa kompletný personál a vlastný hudobný program priania.",
+    "details": "Celá MARÉA je tvoja — od baru cez pláž až po VIP zóny. Zahŕňa kompletný personál a vlastný hudobný program podľa priania.",
     "price": "na vyžiadanie | 2.500.000$/hodina",
-    "icon": "yacht"
+    "icon": "palm"
   },
   {
     "name": "Skupinové rezervácie",

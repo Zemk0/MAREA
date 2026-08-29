@@ -1,9 +1,9 @@
 {
   "name": "MARÉA",
-  "type": "Yacht Bar",
-  "slogan": "Where the city meets the sea.",
-  "shortDescription": "MARÉA je luxusný letný yacht bar kotviaci pri pobreží Los Santos, kde sa stretáva pokoj otvoreného mora s energiou nočného života.",
-  "concept": "MARÉA vznikla z myšlienky spojiť exkluzivitu súkromného yachtingu s otvorenou, komunitnou atmosférou obľúbeného pobrežného baru. Cez deň ponúkame pokojné posedenie pri mori s výhľadom na horizont, večer sa paluba mení na živé miesto plné hudby, svetiel a ľudí.",
+  "type": "Beach Bar",
+  "slogan": "Where the sand meets the sea.",
+  "shortDescription": "MARÉA je luxusný letný beach bar na súkromnej pláži ostrova Cayo Perico, kde sa stretáva pokoj tyrkysového mora s energiou nočného života.",
+  "concept": "MARÉA vznikla z myšlienky spojiť exkluzivitu súkromného ostrovného úniku s otvorenou, komunitnou atmosférou obľúbeného plážového baru. Cez deň ponúkame pokojné posedenie v tieni paliem s výhľadom na horizont, večer sa pláž mení na živé miesto plné hudby, svetiel a ľudí.",
   "atmosphere": "",
   "focus": [
     "Prémiové drinky a koktaily",
@@ -11,19 +11,19 @@
     "Live hudba a DJ eventy",
     "Súkromné akcie a prenájmy",
     "Komunitné a stretnutia",
-    "Letná relaxácia pri mori"
+    "Letná relaxácia na pláži"
   ],
   "location": {
     "title": "Kde nás nájdete",
-    "description": "MARÉA sa nachádza na luxusnej jachte kotviacej mimo pobrežia Los Santos. Prístup je zabezpečený cez naše prístupové miesto na pevnine. Presné informácie o prístupe a otvorení budú dostupné podľa aktuálnej prevádzky.",
-    "area": "Pobrežie Los Santos",
+    "description": "MARÉA sa nachádza na súkromnej pláži ostrova Cayo Perico, ukrytá medzi palmami s výhľadom na otvorené more. Prístup je zabezpečený cez naše prístupové miesto na pevnine. Presné informácie o prístupe a otvorení budú dostupné podľa aktuálnej prevádzky.",
+    "area": "Ostrov Cayo Perico",
     "access": "Prístupový bod na pevnine — Postal xxx",
-    "note": "Od tochto bodu budete prevezení našími zamestnancami na našu PÁRTY PALUBU."
+    "note": "Od tohto bodu budete prevezení našími zamestnancami loďou priamo na ostrov, na našu PÁRTY PLÁŽ."
   },
   "hero": {
     "title": "MARÉA",
-    "subtitle": "YACHT BAR",
-    "tagline": "Where the city meets the sea.",
+    "subtitle": "BEACH BAR",
+    "tagline": "Where the sand meets the sea.",
     "ctaPrimary": "Čo je MARÉA?",
     "ctaSecondary": "Menu a drinky"
   },

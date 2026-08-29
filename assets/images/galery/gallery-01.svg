@@ -1,30 +1,48 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="MARÉA">
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#071a2c"/>
-      <stop offset="55%" stop-color="#0e3a52"/>
-      <stop offset="100%" stop-color="#c9975c"/>
+      <stop offset="0%" stop-color="#0d2233"/>
+      <stop offset="55%" stop-color="#e0885a"/>
+      <stop offset="100%" stop-color="#ffd98a"/>
     </linearGradient>
     <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#f5d18b"/>
-      <stop offset="100%" stop-color="#f5d18b" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#ffd98a"/>
+      <stop offset="100%" stop-color="#ffd98a" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0e3a52"/>
-      <stop offset="100%" stop-color="#082234"/>
+      <stop offset="0%" stop-color="#22a6ba"/>
+      <stop offset="100%" stop-color="#0e6e7c"/>
+    </linearGradient>
+    <linearGradient id="sandGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2dcae"/>
+      <stop offset="100%" stop-color="#d9b579"/>
     </linearGradient>
   </defs>
   <rect width="1600" height="900" fill="url(#sky)"/>
-  <circle cx="1152" cy="324" r="126.00000000000001" fill="url(#sunGrad)"/>
-  <rect y="558" width="1600" height="342" fill="url(#seaGrad)"/>
-  
-    <g transform="translate(480, 558)" opacity="0.92">
-      <path d="M0,60 L420,60 L380,110 L40,110 Z" fill="#0d2036"/>
-      <rect x="60" y="10" width="140" height="52" rx="4" fill="#123249"/>
-      <line x1="130" y1="-90" x2="130" y2="10" stroke="#d9c396" stroke-width="4"/>
-      <path d="M130,-90 L200,5 L130,5 Z" fill="#e8dfc8" opacity="0.9"/>
-    </g>
+  <circle cx="1152" cy="324" r="126" fill="url(#sunGrad)"/>
+  <rect y="558" width="1600" height="232" fill="url(#seaGrad)"/>
   <g opacity="0.5"><path d="M0,594 Q80,570 160,594 Q240,618 320,594 Q400,570 480,594 Q560,618 640,594 Q720,570 800,594 Q880,618 960,594 Q1040,570 1120,594 Q1200,618 1280,594 Q1360,570 1440,594 Q1520,618 1600,594 Q1680,570 1760,594 L1600,794 L0,794 Z" fill="#ffffff" opacity="0.12"/></g>
   <g opacity="0.4"><path d="M0,666 Q80,636 160,666 Q240,696 320,666 Q400,636 480,666 Q560,696 640,666 Q720,636 800,666 Q880,696 960,666 Q1040,636 1120,666 Q1200,696 1280,666 Q1360,636 1440,666 Q1520,696 1600,666 Q1680,636 1760,666 L1600,866 L0,866 Z" fill="#ffffff" opacity="0.1"/></g>
   <g opacity="0.3"><path d="M0,756 Q80,738 160,756 Q240,774 320,756 Q400,738 480,756 Q560,774 640,756 Q720,738 800,756 Q880,774 960,756 Q1040,738 1120,756 Q1200,774 1280,756 Q1360,738 1440,756 Q1520,774 1600,756 Q1680,738 1760,756 L1600,956 L0,956 Z" fill="#ffffff" opacity="0.08"/></g>
+  <rect y="790" width="1600" height="110" fill="url(#sandGrad)"/>
+  <g transform="translate(480, 790)" opacity="0.92">
+    <path d="M-30,0 C-45,-58 -38,-102 2,-158" stroke="#16241a" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <g fill="#16241a">
+      <path d="M2,-158 C-40,-182 -85,-176 -110,-150 C-58,-162 -22,-162 2,-158Z"/>
+      <path d="M2,-158 C32,-198 76,-205 108,-186 C62,-186 26,-174 2,-158Z"/>
+      <path d="M2,-158 C-14,-202 -10,-238 14,-262 C30,-222 20,-186 2,-158Z"/>
+      <path d="M2,-158 C36,-190 70,-214 100,-212 C68,-192 34,-172 2,-158Z"/>
+      <path d="M2,-158 C-32,-190 -48,-220 -38,-250 C-16,-214 -8,-184 2,-158Z"/>
+    </g>
+    <g transform="translate(150,0)">
+      <rect x="-58" y="-4" width="116" height="8" fill="#16241a" opacity="0.85"/>
+      <path d="M-72,0 L72,0 L44,-66 L-44,-66 Z" fill="#16241a"/>
+      <path d="M-44,-66 L44,-66 L18,-96 L-18,-96 Z" fill="#213524"/>
+    </g>
+    <g transform="translate(-160,0)">
+      <line x1="0" y1="0" x2="0" y2="-92" stroke="#f3e3c4" stroke-width="4"/>
+      <path d="M-48,-92 Q0,-136 48,-92 Z" fill="#e8734a"/>
+      <path d="M-48,-92 Q-24,-102 0,-92 Q24,-102 48,-92" fill="none" stroke="#f3e3c4" stroke-width="2" opacity="0.7"/>
+    </g>
+  </g>
 </svg>
